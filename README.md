@@ -1,6 +1,6 @@
 # WarriorsGymFrontend
 
-#### [Here is the link for the Warriors Gym Backend Repo](https://github.com/marcusjensen15/Warriors_Gym_Frontend)
+#### [Here is the link for the Warriors Gym Backend Repo](https://github.com/marcusjensen15/Warriors_Gym_Backend)
 
 ## Development server
 
