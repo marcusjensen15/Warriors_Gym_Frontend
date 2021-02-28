@@ -1,6 +1,6 @@
 # WarriorsGymFrontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
+#### [Here is the link for the Warriors Gym Frontend Repo](https://github.com/marcusjensen15/Warriors_Gym_Frontend)
 
 ## Development server
 
