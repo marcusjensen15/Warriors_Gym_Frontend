@@ -1,0 +1,34 @@
+@import "../../assets/variables";
+
+.login-container{
+  background-color: $scw-grey;
+  width: 100%;
+  height: 100%;
+}
+
+.mat-form-field {
+  background-color: $scw-white;
+  margin: 10px;
+  width: 100%;
+}
+
+.login-container{
+  width: 100%;
+}
+
+.example-form{
+  padding-top: 18%;
+  width: 25%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+}
+
+.form-wrapper{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
