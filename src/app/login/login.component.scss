@@ -9,7 +9,7 @@
 .mat-form-field {
   background-color: $scw-white;
   margin: 10px;
-  width: 45%;
+  width: 100%;
 }
 
 .login-container{
@@ -18,7 +18,7 @@
 
 .example-form{
   padding-top: 18%;
-  width: 40%;
+  width: 25%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -27,5 +27,8 @@
 }
 
 .form-wrapper{
-  background-color: $scw-yellow-light;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
