@@ -1,0 +1,17 @@
+@import "../../assets/variables";
+
+.muscle-group-content-wrapper{
+  background-color: $scw-grey;
+  height: 90%;
+}
+
+.muscle-group-heading-wrapper{
+  text-align: center;
+  padding-top: 5%;
+  color: white;
+
+  & .header-text{
+  font-size: 2vw;
+  }
+
+}
