@@ -1,0 +1,36 @@
+@import "../../assets/variables";
+
+.muscle-group-content-wrapper{
+  background-color: $scw-grey;
+  height: 90%;
+}
+
+.muscle-group-heading-wrapper{
+  text-align: center;
+  padding-top: 5%;
+  color: white;
+
+  & .header-text{
+  font-size: 2vw;
+  }
+}
+
+.muscle-group-button-grid{
+  padding-top: 6%;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.grid-item{
+  padding: 3%;
+  margin: 3%;
+  font-size: 1.2vw;
+  text-align: center;
+  background-color: $scw-yellow-dark;
+  color: $scw-white;
+  &:hover{
+    background-color: $scw-yellow-light;
+  }
+}
