@@ -1,0 +1,43 @@
+@import "../../assets/variables";
+
+.quiz-content-wrapper{
+  background-color: $scw-grey;
+  height: 90%;
+  width: 100%;
+  text-align: center;
+}
+
+.quiz-heading-wrapper{
+  text-align: center;
+  padding-top: 3%;
+  color: $scw-white;
+
+  & .header-text{
+    font-size: 2vw;
+  }
+}
+
+.question-box{
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 3.5%;
+  background-color: $scw-light-grey;
+}
+
+.grid-item{
+  padding: 1%;
+
+  //will need to adjust margin-top to account for real content (question + answers)
+  //being present within the question-box div.
+
+  margin-top: 35%;
+  font-size: 1.2vw;
+  text-align: center;
+  background-color: $scw-yellow-dark;
+  color: $scw-white;
+  &:hover{
+    background-color: $scw-yellow-light;
+  }
+}
