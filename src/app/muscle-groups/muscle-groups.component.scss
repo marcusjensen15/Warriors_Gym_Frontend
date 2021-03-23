@@ -16,7 +16,7 @@
 }
 
 .muscle-group-button-grid{
-  padding-top: 6%;
+  padding-top: 3%;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   margin-left: auto;
@@ -26,6 +26,7 @@
 .grid-item{
   padding: 3%;
   margin: 3%;
+  margin-top: 20%;
   font-size: 1.2vw;
   text-align: center;
   background-color: $scw-yellow-dark;

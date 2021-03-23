@@ -1,2 +1,27 @@
 <app-header></app-header>
-<p>quiz works!</p>
+
+<div class="quiz-content-wrapper">
+  <div class="quiz-heading-wrapper">
+    <p class="header-text">Dynamic Title (Muscle Group)</p>
+  </div>
+  <div class="question-box">
+    <p class="question-text">Here is some question text that will change dynamically with each question.
+      This is going to be a wonderful app and all of the employees at Secure Code Warrior
+      are going to find tremdous value in using it. I'm just typing a bunch of random
+      plaeholder content.
+    </p>
+    <div class="option-container">
+      <label id="example-radio-group-label">Select your answer:</label>
+      <mat-radio-group>
+        <!-- <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+          {{season}} -->
+          <mat-radio-button value="1">Option 1</mat-radio-button>
+          <mat-radio-button value="1">Option 2</mat-radio-button>
+          <mat-radio-button value="1">Option 3</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <button class="grid-item" mat-raised-button>Submit Answer</button>
+  </div>
+</div>
+
+
