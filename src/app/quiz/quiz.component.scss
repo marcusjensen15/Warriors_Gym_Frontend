@@ -4,7 +4,8 @@
   background-color: $scw-grey;
   height: 90%;
   width: 100%;
-  text-align: center;
+  //below is breaking the shadow on button selection
+  // text-align: center;
 }
 
 .quiz-heading-wrapper{
@@ -19,9 +20,9 @@
 
 .question-box{
   width: 60%;
-  height: 60%;
   display: inline-block;
-  margin: 0 auto;
+  margin-left: 20%;
+  margin-right: 20%;
   margin-top: 3.5%;
   background-color: $scw-light-grey;
 }
@@ -30,20 +31,43 @@
   color: $scw-white;
   font-size: 1vw;
   margin: 3.5%;
+  text-align: center;
+}
+
+.selection-option{
+  display: block;
+  color: $scw-white;
+  padding-left: 6%;
+  font-size: 0.9vw;
+  margin: 2%;
+}
+
+#example-radio-group-label{
+  color: $scw-white;
+  padding-bottom: 2%;
+  font-size: 0.9vw;
+  padding-left: 6%;;
+}
+
+.selection-option-wrapper{
+  color: $scw-white;
 }
 
 .grid-item{
   padding: 1%;
-
-  //will need to adjust margin-top to account for real content (question + answers)
-  //being present within the question-box div.
-
-  margin-top: 24%;
-  font-size: 1.2vw;
+  margin:0 auto;
+  display:block;
+  margin-top: 4%;
+  margin-bottom: 3%;
+  font-size: 1vw;
   text-align: center;
   background-color: $scw-yellow-dark;
   color: $scw-white;
   &:hover{
     background-color: $scw-yellow-light;
   }
+}
+
+::ng-deep .mat-radio-container{
+  margin-right: 12px !important;
 }
