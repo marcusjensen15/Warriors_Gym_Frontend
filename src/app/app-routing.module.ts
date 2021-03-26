@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'musclegroups', component: MuscleGroupsComponent },
   { path: 'quiz', component: QuizComponent },
-  { path: 'users', component: UserManagementComponent }
+  { path: 'users-management', component: UserManagementComponent }
 ];
 
 @NgModule({
