@@ -2,6 +2,17 @@
 <div class="add-question-content-wrapper">
   <div class="add-question-heading-wrapper">
     <p class="header-text">Add Question</p>
-
   </div>
+  <div class="dropdown-input-container">
+    <mat-form-field appearance="fill">
+      <mat-label span="dropdown-label">Select Muscle Group</mat-label>
+      <mat-select>
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <mat-form-field class="question-text-container">
+    <textarea rows="20" cols="200" matInput placeholder="Write Your question here..."></textarea>
+  </mat-form-field>
 </div>

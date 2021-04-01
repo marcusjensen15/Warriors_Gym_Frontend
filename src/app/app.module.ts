@@ -14,6 +14,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 
+import {MatSelectModule} from '@angular/material/select';
+
 
 import { HeaderComponent } from "./header/header.component";
 import { AddQuestionComponent } from './add-question/add-question.component';
@@ -34,7 +36,8 @@ import { AddQuestionComponent } from './add-question/add-question.component';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
