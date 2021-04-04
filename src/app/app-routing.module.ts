@@ -7,14 +7,15 @@ import { MuscleGroupsComponent } from './muscle-groups/muscle-groups.component';
 import { QuizComponent } from './quiz/quiz.component';
 import { SignupComponent } from './signup/signup.component';
 import { UserManagementComponent } from './user-management/user-management.component';
-
+import { AddQuestionComponent } from './add-question/add-question.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'signup', component: SignupComponent},
   { path: 'login', component: LoginComponent },
   { path: 'musclegroups', component: MuscleGroupsComponent },
   { path: 'quiz', component: QuizComponent },
-  { path: 'users-management', component: UserManagementComponent }
+  { path: 'users-management', component: UserManagementComponent },
+  { path: 'add-question', component: AddQuestionComponent }
 ];
 
 @NgModule({
@@ -22,4 +23,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [HomeComponent,SignupComponent,LoginComponent,MuscleGroupsComponent,QuizComponent,UserManagementComponent];
+export const routingComponents = [HomeComponent,SignupComponent,LoginComponent,MuscleGroupsComponent,QuizComponent,UserManagementComponent,AddQuestionComponent];

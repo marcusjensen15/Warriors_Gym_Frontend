@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<div class="add-question-content-wrapper">
+  <div class="add-question-heading-wrapper">
+    <p class="header-text">Add Question</p>
+  </div>
+
+  <div class="dropdown-input-container">
+    <mat-form-field appearance="fill">
+      <mat-label span="dropdown-label">Select Muscle Group</mat-label>
+      <mat-select aria-placeholder="Select Muscle Group">
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <mat-form-field class="question-text-container" appearance="fill">
+    <textarea rows="5" matInput placeholder="Add your question here"></textarea>
+  </mat-form-field>
+
+<div class="selection-option-wrapper">
+  <mat-radio-group>
+    <div class="selection-option-label-container">
+      <mat-label class="selection-option-label">Input possible answers and select the correct option</mat-label>
+    </div>
+    <div class="selection-option-container">
+      <mat-radio-button class="selection-option" value="1"><input type="text" class="text-answer-option-field"></mat-radio-button>
+      <mat-radio-button class="selection-option" value="2"><input type="text" class="text-answer-option-field"></mat-radio-button>
+      <mat-radio-button class="selection-option" value="3"><input type="text" class="text-answer-option-field"></mat-radio-button>
+      <mat-radio-button class="selection-option" value="4"><input type="text" class="text-answer-option-field"></mat-radio-button>
+    </div>
+  </mat-radio-group>
+</div>
+  <div class="button-container">
+    <div class="button-wrapper">
+      <button mat-raised-button>Add Question</button>
+    </div>
+  </div>
+</div>
+

@@ -10,18 +10,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatRadioModule } from '@angular/material/radio';
+
+import {MatSelectModule} from '@angular/material/select';
 
 
 import { HeaderComponent } from "./header/header.component";
+import { AddQuestionComponent } from './add-question/add-question.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    routingComponents
+    routingComponents,
+    AddQuestionComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,8 @@ import { HeaderComponent } from "./header/header.component";
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatRadioModule
+    MatRadioModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
