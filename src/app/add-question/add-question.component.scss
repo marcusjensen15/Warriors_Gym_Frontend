@@ -88,11 +88,27 @@
   font-size: 1.2vw;
 }
 
-// ::ng-deep .cdk-focused .cdk-mouse-focused{
-//   color: green;
-// }
-
 input[type=text]:focus{
   border: 4px solid $scw-yellow-light;
   outline: none;
+}
+
+.mat-raised-button{
+  width: 100%;
+  margin: 0 auto;
+  background-color: $scw-yellow-dark;
+  color: $scw-white;
+  &:hover{
+    background-color: $scw-yellow-light;
+  }
+}
+
+.button-container{
+  margin-top: 3%;
+  width: 100%;
+}
+
+.button-wrapper{
+  width: 25%;
+  margin: 0 auto;
 }
