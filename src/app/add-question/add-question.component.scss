@@ -10,7 +10,6 @@
   padding-top: 3%;
   margin-bottom: 2%;
   color: $scw-white;
-  // width: 100%;
 
   & .header-text{
     font-size: 2vw;
@@ -74,7 +73,6 @@
 
 .text-answer-option-field{
   width: 43vw;
-  // width: 100%;
   border-radius: 4px;
   height: 2vh;
 }
@@ -88,4 +86,13 @@
   width: 100%;
   text-align: center;
   font-size: 1.2vw;
+}
+
+// ::ng-deep .cdk-focused .cdk-mouse-focused{
+//   color: green;
+// }
+
+input[type=text]:focus{
+  border: 4px solid $scw-yellow-light;
+  outline: none;
 }
