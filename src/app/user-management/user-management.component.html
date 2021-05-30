@@ -4,40 +4,18 @@
   <div class="users-management-heading-wrapper">
     <p class="header-text">Users</p>
   </div>
-  <!-- This code below will be repeated for each user -->
-    <div class="individual-user">
-      <div class="name">
-        <p>User's Name</p>
-      </div>
-      <div class="button-container">
-        <button mat-raised-button color="accent">User Details</button>
-        <button mat-raised-button color="warn">Delete</button>
-      </div>
-    </div>
-  <!-- This code above will be repeated for each user -->
 
-  <!-- This code below will be repeated for each user -->
-    <div class="individual-user">
-      <div class="name">
-        <p>User's Name 2</p>
-      </div>
-      <div class="button-container">
-        <button mat-raised-button color="accent">User Details</button>
-        <button mat-raised-button color="warn">Delete</button>
-      </div>
-    </div>
-  <!-- This code above will be repeated for each user -->
+  <!-- ngFor below will need to be modified when we included real users with real properties -->
 
-  <!-- This code below will be repeated for each user -->
-    <div class="individual-user">
+    <div class="individual-user" *ngFor="let userName of users">
       <div class="name">
-        <p>User's Name 3</p>
+        <p>{{userName}}</p>
       </div>
       <div class="button-container">
         <button mat-raised-button color="accent">User Details</button>
         <button mat-raised-button color="warn">Delete</button>
       </div>
     </div>
-  <!-- This code above will be repeated for each user -->
+
 </div>
 
