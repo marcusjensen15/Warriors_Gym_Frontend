@@ -2,6 +2,22 @@
 
 #### [Here is the link for the Warriors Gym Backend Repo](https://github.com/marcusjensen15/Warriors_Gym_Backend)
 
+## How to get this demo up and running:
+
+- Clone this repo.
+- Navigate to this repo on your machine. Run `ng serve`
+- The above command should create a dev server, for me it is: `localhost:4200`
+
+## Valid routes for this demo site:
+
+- localhost:4200/home
+- localhost:4200/signup
+- localhost:4200/login
+- localhost:4200/musclegroups
+- localhost:4200/quiz
+- localhost:4200/users-management
+- localhost:4200/add-question
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
