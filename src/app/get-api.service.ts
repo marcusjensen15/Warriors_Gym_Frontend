@@ -10,7 +10,7 @@ export class GetApiService {
     private http:HttpClient
   ) { }
 
-  // Adjust link below to real get users API call.
+  // Adjust link below to real get users API call. Need to figure out how this works with tokens.
 
   getUsers(){
     return this.http.get('https://jsonplaceholder.typicode.com/todos/1');
