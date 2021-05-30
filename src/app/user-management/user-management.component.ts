@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserManagementComponent implements OnInit {
 
-  constructor() { }
+  public users = ["User 1", "User 2", "User 3", "User 4"];
+
+  constructor() {}
 
   ngOnInit(): void {
   }
