@@ -6,15 +6,9 @@
   </div>
 
   <div class="muscle-group-button-grid">
-    <button class="grid-item" mat-raised-button>Tournaments</button>
-    <button class="grid-item" mat-raised-button>Assessments</button>
-    <button class="grid-item" mat-raised-button>Training</button>
-    <button class="grid-item" mat-raised-button>Resources</button>
-    <button class="grid-item" mat-raised-button>Courses</button>
-    <button class="grid-item" mat-raised-button>Administration</button>
-    <button class="grid-item" mat-raised-button>Content</button>
-    <button class="grid-item" mat-raised-button>Metrics</button>
+    <button class="grid-item" mat-raised-button *ngFor="let muscleGroup of muscleGroups">{{muscleGroup}}</button>
   </div>
+
 </div>
 
 
