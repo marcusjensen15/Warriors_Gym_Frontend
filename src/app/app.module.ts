@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule } from '@angular/common/http'
 
 //All views requiring routes are encapsulated within 'routingComponents'
 import { AppRoutingModule, routingComponents } from './app-routing.module';
@@ -37,7 +38,8 @@ import { AddQuestionComponent } from './add-question/add-question.component';
     MatFormFieldModule,
     MatInputModule,
     MatRadioModule,
-    MatSelectModule
+    MatSelectModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
