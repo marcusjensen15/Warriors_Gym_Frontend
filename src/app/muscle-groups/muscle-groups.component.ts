@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MuscleGroupsComponent implements OnInit {
 
+  //If you want to add a new muscle group, add it to the array below.
+
+  public muscleGroups = ["Tournaments", "Assessments", "Training", "Resources", "Courses", "Administration", "Content", "Metrics"];
+
   constructor() { }
 
   ngOnInit(): void {
