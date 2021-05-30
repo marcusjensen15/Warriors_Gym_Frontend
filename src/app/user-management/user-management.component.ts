@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {GetApiService} from '../get-api.service';
 
 @Component({
   selector: 'app-user-management',
@@ -9,9 +10,17 @@ export class UserManagementComponent implements OnInit {
 
   public users = ["User 1", "User 2", "User 3", "User 4"];
 
-  constructor() {}
 
-  ngOnInit(): void {
+  constructor(private api:GetApiService) {}
+
+  //This is a basic API Call. Adjust with real users.
+
+  ngOnInit() {
+
+    this.api.getUsers().subscribe((data)=>{
+      console.log("get api data", data);
+      this.users = Object.values(data);
+    })
   }
 
 }
