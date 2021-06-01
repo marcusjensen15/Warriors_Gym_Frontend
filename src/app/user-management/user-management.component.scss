@@ -1,5 +1,10 @@
 @import "../../assets/variables";
 
+.parentDiv{
+
+
+}
+
 .users-management-heading-wrapper{
   text-align: center;
   padding-top: 3%;
@@ -14,6 +19,9 @@
 .users-management-content-wrapper{
   background-color: $scw-grey;
   height: 90%;
+  overflow: scroll;
+  overflow-x: hidden;
+  // overflow-y:hidden;
 }
 
 .individual-user{
