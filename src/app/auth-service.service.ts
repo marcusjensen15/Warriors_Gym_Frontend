@@ -1,16 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpHeaders} from '@angular/common/http'
-
-
-// const httpOptionsPlain = {
-//   headers: new HttpHeaders({
-//     'Accept': 'text/plain',
-//     'Content-Type': 'text/plain'
-//   }),
-//   'responseType': 'text'
-// };
 
 @Injectable({
   providedIn: 'root'
