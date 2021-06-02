@@ -1,11 +1,12 @@
 <div class="login-container">
   <div class="example-form-container">
-  <form class="example-form">
+  <form class="example-form" [formGroup]="formGroup" (ngSubmit)="loginProcess()">
     <div class="form-wrapper">
       <div class="input-wrapper">
         <mat-form-field class="login-input">
           <mat-label>Email Address</mat-label>
           <input type="email" matInput
+                formControlName="email"
                 placeholder="Ex. pat@example.com">
           <mat-error>
             Please enter a valid email address
@@ -17,7 +18,7 @@
 
         <mat-form-field class="login-input">
           <mat-label>Password</mat-label>
-          <input type="password" matInput>
+          <input type="password" matInput formControlName="password">
           <mat-error>
             Password is <strong>required</strong>
           </mat-error>
