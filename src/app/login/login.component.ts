@@ -21,15 +21,22 @@ export class LoginComponent implements OnInit {
       password: new FormControl('',[Validators.required])
     })
   }
+
+  // This token being stored in local storage will be the same within 'signup' view
   loginProcess(){
     if(this.formGroup.valid){
-      this.authService.login(this.formGroup.value).subscribe(result=>{
+      this.authService.login(this.formGroup.value).subscribe(
+        result=>{
+
         if(result.token){
           console.log("successful!",result);
+          localStorage.setItem('token', result.token)
         }
+
         else{
           console.log("failed", result);
         }
+
       });
     }
 
