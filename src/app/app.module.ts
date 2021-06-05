@@ -21,6 +21,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { HeaderComponent } from "./header/header.component";
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthGuard } from './auth.guard';
+import { AuthServiceService } from './auth-service.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthGuard, AuthServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

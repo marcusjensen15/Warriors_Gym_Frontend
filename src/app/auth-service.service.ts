@@ -14,4 +14,10 @@ export class AuthServiceService {
   login(data: any):Observable<any>{
     return this.http.post(`http://localhost:3000/auth`, data);
   }
+
+  // Double ! will always return true or false.
+
+  loggedIn(){
+    return !!localStorage.getItem('token');
+  }
 }
