@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AuthServiceService} from './auth-service.service';
 
 @Injectable({
   providedIn: 'root'
@@ -7,16 +8,17 @@ import { HttpClient } from '@angular/common/http';
 export class GetApiService {
 
   constructor(
-    private http:HttpClient
+    private http:HttpClient,
+    private authService: AuthServiceService
   ) { }
 
-  // Adjust link below to real get users API call. Need to figure out how this works with tokens.
-  // Will need to create an auth service, pass in token as argument in future. For now, just hard code it to get this wired up at a basic level
+  // Need all other GET calls here. Using the getToken() method.
 
   getUsers(){
     return this.http.get<any>('http://localhost:3000/users', {
       headers: {
-        "x-auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGI1NGVmYWEzM2ViODA0MjhiZDkyYjkiLCJpc0FkbWluIjp0cnVlLCJpc01hbmFnZXIiOnRydWUsImlhdCI6MTYyMjQ5NTA3Nn0.TkP4OBL401w22wNnmqaGdEO9Nfw10A-xiiDKkRfWIbo"}
+        "x-auth-token": <string>this.authService.getToken()
+      }
     });
   };
 }
