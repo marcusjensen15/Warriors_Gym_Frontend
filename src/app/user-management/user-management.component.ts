@@ -1,6 +1,7 @@
 import { LiteralMapEntry } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import {GetApiService} from '../get-api.service';
+import {AuthServiceService} from '../auth-service.service';
 
 @Component({
   selector: 'app-user-management',
@@ -15,7 +16,7 @@ export class UserManagementComponent implements OnInit {
   public result : string[] = [];
 
 
-  constructor(private api:GetApiService) {}
+  constructor(private api:GetApiService, public authService:AuthServiceService) {}
 
   //This is a basic API Call. Adjust with real users.
 
