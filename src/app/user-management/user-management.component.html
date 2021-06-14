@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<div class="users-management-content-wrapper">
+<div *ngIf="!errorMsg" class="users-management-content-wrapper">
   <div class="users-management-heading-wrapper">
     <p class="header-text">Users</p>
   </div>
@@ -16,6 +16,6 @@
         <button mat-raised-button color="warn">Delete</button>
       </div>
     </div>
-
 </div>
 
+<h3 *ngIf="errorMsg">{{errorMsg}}</h3>

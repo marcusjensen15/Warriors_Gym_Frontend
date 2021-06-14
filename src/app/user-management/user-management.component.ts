@@ -14,6 +14,7 @@ export class UserManagementComponent implements OnInit {
 
   public users = ["User 1", "User 2", "User 3", "User 4"];
   public result : string[] = [];
+  public errorMsg: string;
 
 
   constructor(private api:GetApiService, public authService:AuthServiceService) {}
@@ -22,15 +23,14 @@ export class UserManagementComponent implements OnInit {
 
   ngOnInit() {
 
-    this.api.getUsers().subscribe((data)=>{
-      console.log("get api data", data);
-
-      data.forEach((element: any) => {this.result.push(element.email);
-      });
-
-      this.users = this.result;
-
-    })
+    this.api.getUsers().subscribe(
+  data => {
+          // console.log("get api data", Array.isArray(data));
+          data.forEach((element: any) => {this.result.push(element.email);
+          });
+          this.users = this.result;
+        },
+      error => this.errorMsg = error
+    )
   }
-
 }

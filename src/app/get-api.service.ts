@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { AuthServiceService} from './auth-service.service';
+import { Observable} from "rxjs";
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +17,21 @@ export class GetApiService {
 
   // Need all other GET calls here. Using the getToken() method.
 
-  getUsers(){
-    return this.http.get<any>('http://localhost:3000/users', {
+  getUsers(): Observable<any>{
+    return this.http.get('http://localhost:3000/users', {
       headers: {
         "x-auth-token": <string>this.authService.getToken()
       }
-    });
+  })
+      .pipe(
+        catchError(this.errorHandler));
   };
+
+  errorHandler(error: HttpErrorResponse){
+    return throwError(error.error || "server error")
+  }
+
 }
+
+
+
