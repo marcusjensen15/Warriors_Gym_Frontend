@@ -2,10 +2,10 @@
 
 <div class="muscle-group-content-wrapper">
   <div class="muscle-group-heading-wrapper">
-    <p class="header-text">Select A Muscle Group Warrior</p>
+    <p data-test="muscleGroupsHeader" class="header-text">Select A Muscle Group Warrior</p>
   </div>
 
-  <div class="muscle-group-button-grid">
+  <div data-test="muscleGroups" class="muscle-group-button-grid">
     <button class="grid-item" mat-raised-button *ngFor="let muscleGroup of muscleGroups">{{muscleGroup}}</button>
   </div>
 
