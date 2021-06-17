@@ -2,10 +2,10 @@
 
 <div class="quiz-content-wrapper">
   <div class="quiz-heading-wrapper">
-    <p class="header-text">Dynamic Title (Muscle Group)</p>
+    <p data-test="quizHeader" class="header-text">Dynamic Title (Muscle Group)</p>
   </div>
   <div class="question-box">
-    <p class="question-text">Here is some question text that will change dynamically with each question.
+    <p data-test="quizQuestion" class="question-text">Here is some question text that will change dynamically with each question.
       This is going to be a wonderful app and all of the employees at Secure Code Warrior
       are going to find tremdous value in using it. I'm just typing a bunch of random
       plaeholder content.
@@ -15,13 +15,13 @@
       <mat-radio-group class="selection-option-wrapper">
         <!-- <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
           {{season}} -->
-          <mat-radio-button class="selection-option" value="1">Option 1</mat-radio-button>
-          <mat-radio-button class="selection-option" value="2">Option 2</mat-radio-button>
-          <mat-radio-button class="selection-option" value="3">Option 3</mat-radio-button>
-          <mat-radio-button class="selection-option" value="4">Option 4</mat-radio-button>
+          <mat-radio-button data-test="question1" class="selection-option" value="1">Option 1</mat-radio-button>
+          <mat-radio-button data-test="question2" class="selection-option" value="2">Option 2</mat-radio-button>
+          <mat-radio-button data-test="question3" class="selection-option" value="3">Option 3</mat-radio-button>
+          <mat-radio-button data-test="question4" class="selection-option" value="4">Option 4</mat-radio-button>
       </mat-radio-group>
     </div>
-    <button class="grid-item" mat-raised-button>Submit Answer</button>
+    <button data-test="quizSubmitButton" class="grid-item" mat-raised-button>Submit Answer</button>
   </div>
 </div>
 

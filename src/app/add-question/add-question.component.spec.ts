@@ -22,4 +22,8 @@ describe('AddQuestionComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should show header logo', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="headerLogo"]')).toBeTruthy();
+  });
 });
