@@ -3,7 +3,7 @@
   <form class="example-form" [formGroup]="formGroup" (ngSubmit)="loginProcess()">
     <div class="form-wrapper">
       <div class="input-wrapper">
-        <mat-form-field class="login-input">
+        <mat-form-field data-test="loginEmailField" class="login-input">
           <mat-label>Email Address</mat-label>
           <input type="email" matInput
                 formControlName="email"
@@ -16,7 +16,7 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field class="login-input">
+        <mat-form-field data-test="loginPasswordField" class="login-input">
           <mat-label>Password</mat-label>
           <input type="password" matInput formControlName="password">
           <mat-error>

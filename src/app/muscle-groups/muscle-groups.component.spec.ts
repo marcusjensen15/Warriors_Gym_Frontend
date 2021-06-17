@@ -22,4 +22,12 @@ describe('MuscleGroupsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should show muscle groups', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="muscleGroups"]')).toBeTruthy();
+  });
+
+  it('should show muscle group header', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="muscleGroupsHeader"]')).toBeTruthy();
+  });
 });

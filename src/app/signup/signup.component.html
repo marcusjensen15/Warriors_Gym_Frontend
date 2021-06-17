@@ -3,7 +3,7 @@
     <form class="example-form">
       <div class="form-wrapper">
         <div class="input-wrapper">
-          <mat-form-field class="login-input">
+          <mat-form-field data-test="signupEmailField" class="login-input">
             <mat-label>Email Address</mat-label>
             <input type="email" matInput
                   placeholder="Ex. pat@example.com">
@@ -15,7 +15,7 @@
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field class="login-input">
+          <mat-form-field data-test="signupPasswordField" class="login-input">
             <mat-label>Password</mat-label>
             <input type="password" matInput>
             <mat-error>
@@ -23,7 +23,7 @@
             </mat-error>
           </mat-form-field>
 
-          <mat-form-field class="login-input">
+          <mat-form-field data-test="signupPasswordConfirmField" class="login-input">
             <mat-label>Confirm Password</mat-label>
             <input type="password" matInput>
             <mat-error>

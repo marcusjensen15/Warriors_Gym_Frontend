@@ -22,4 +22,16 @@ describe('SignupComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should show email field', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="signupEmailField"]')).toBeTruthy();
+  });
+
+  it('should show password field', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="signupPasswordField"]')).toBeTruthy();
+  });
+
+  it('should show password confirmfield', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="signupPasswordConfirmField"]')).toBeTruthy();
+  });
 });
