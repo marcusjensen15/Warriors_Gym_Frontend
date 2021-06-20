@@ -30,4 +30,14 @@ describe('MuscleGroupsComponent', () => {
   it('should show muscle group header', () => {
     expect(fixture.nativeElement.querySelector('[data-test="muscleGroupsHeader"]')).toBeTruthy();
   });
+
+    it('should show each muscle group individually', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="muscleGroupsHeader"]')).toBeTruthy();
+  });
+
+    it('should show one specific muscle group', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="specificMuscleGroup"]')).toBeTruthy();
+  });
+
+
 });
