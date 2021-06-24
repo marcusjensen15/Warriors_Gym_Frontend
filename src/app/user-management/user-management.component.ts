@@ -15,6 +15,7 @@ export class UserManagementComponent implements OnInit {
   public users = ["User 1", "User 2", "User 3", "User 4"];
   public result : string[] = [];
   public errorMsg: string;
+  mockUsers$;
 
 
   constructor(private api:GetApiService, public authService:AuthServiceService) {}
@@ -22,10 +23,22 @@ export class UserManagementComponent implements OnInit {
   //This is a basic API Call. Adjust with real users.
 
   ngOnInit() {
+    this.mockUsers$ = this.api.mockApiCall$()
+    // below is strictly for testing
+
+    // this.api.mockApiCall().subscribe(
+    //   data => {
+    //     console.log("get fake api data", data);
+    //     data.forEach((element: any) => {this.mockUsers.push(element.email);
+    //     });
+        // this.users = this.result;
+      // });
+
+    // above is strictly for testing.
 
     this.api.getUsers().subscribe(
   data => {
-          // console.log("get api data", Array.isArray(data));
+          console.log("get api data", data);
           data.forEach((element: any) => {this.result.push(element.email);
           });
           this.users = this.result;

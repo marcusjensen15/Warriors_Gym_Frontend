@@ -1,0 +1,39 @@
+[
+  {
+    "_id": "123abc",
+    "name": "Mike Jones",
+    "email": "mikejones@test.com",
+    "password": "xyl2345",
+    "isAdmin": false,
+    "isManager": false
+  },
+
+    {
+    "_id": "123def",
+    "name": "Wayne Carter",
+    "email": "waynecarter@test.com",
+    "password": "xyl098",
+    "isAdmin": false,
+    "isManager": true
+  },
+
+    {
+    "_id": "123ghi",
+    "name": "Mac Dre",
+    "email": "macdre@test.com",
+    "password": "xyl2345",
+    "isAdmin": true,
+    "isManager": true
+  },
+
+    {
+    "_id": "123jkl",
+    "name": "Fat Joe",
+    "email": "fatjoe@test.com",
+    "password": "xyl0384",
+    "isAdmin": false,
+    "isManager": false
+  }
+]
+
+
