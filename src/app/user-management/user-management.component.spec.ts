@@ -1,18 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-// import { spyOnClass } from 'jasmine-es6-spies';
-// import { GetApiService} from "../get-api.service";
+import { HttpClientTestingModule} from "@angular/common/http/testing";
 
 import { UserManagementComponent } from './user-management.component';
 
 describe('UserManagementComponent', () => {
   let component: UserManagementComponent;
   let fixture: ComponentFixture<UserManagementComponent>;
-  // let MockUserService: jasmine.SpyObj<GetApiService>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserManagementComponent ],
-      // providers: [ { provide: GetApiService, useFactory: () => spyOnClass(GetApiService) }]
+      imports: [HttpClientTestingModule],
+      declarations: [ UserManagementComponent ]
     })
     .compileComponents();
   });
@@ -23,9 +21,9 @@ describe('UserManagementComponent', () => {
     fixture.detectChanges();
   });
 
-  // it('should create', () => {
-  //   expect(component).toBeTruthy();
-  // });
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 
   // it('should show users', () =>{
   //
