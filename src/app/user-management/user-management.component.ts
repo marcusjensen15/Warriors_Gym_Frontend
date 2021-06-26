@@ -12,7 +12,7 @@ export class UserManagementComponent implements OnInit {
 
   // users are dummy values in case there is no API connected
 
-  public users = ["User 1", "User 2", "User 3", "User 4"];
+  public users = ["User 1", "User 2", "User 3", "User 4", "User 5"];
   public result : string[] = [];
   public errorMsg: string;
   mockUsers$;
