@@ -32,8 +32,7 @@ export class GetApiService {
   }
 
   mockApiCall$(){
-    //This will be replaced by real HTTP call
-     return this.http.get<any>('something');
+     return this.http.get<any>('assets/users.json');
   }
 
 }

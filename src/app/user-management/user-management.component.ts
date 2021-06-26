@@ -23,16 +23,9 @@ export class UserManagementComponent implements OnInit {
   //This is a basic API Call. Adjust with real users.
 
   ngOnInit() {
-    this.mockUsers$ = this.api.mockApiCall$()
     // below is strictly for testing
 
-    // this.api.mockApiCall().subscribe(
-    //   data => {
-    //     console.log("get fake api data", data);
-    //     data.forEach((element: any) => {this.mockUsers.push(element.email);
-    //     });
-        // this.users = this.result;
-      // });
+    this.mockUsers$ = this.api.mockApiCall$()
 
     // above is strictly for testing.
 

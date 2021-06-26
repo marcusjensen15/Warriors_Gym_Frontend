@@ -7,14 +7,12 @@ import { of } from 'rxjs';
 
 
 describe('GetApiService', () => {
-  // let dataService: GetApiService;
   let httpClient: HttpClient;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule]
     });
-    // DataService = TestBed.inject(GetApiService);
   });
 
   it('should return a list of users', () => {
@@ -75,7 +73,7 @@ describe('GetApiService', () => {
 
     //Verify that the service called the proper HTTP endpoint
 
-    // expect(httpClient.get).toHaveBeenCalledWith('assets/users.json');
+    expect(httpClient.get).toHaveBeenCalledWith('assets/users.json');
 
   });
 });
