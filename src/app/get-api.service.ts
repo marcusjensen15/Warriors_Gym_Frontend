@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { AuthServiceService} from './auth-service.service';
 import { Observable} from "rxjs";
 import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { throwError, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +29,10 @@ export class GetApiService {
 
   errorHandler(error: HttpErrorResponse){
     return throwError(error.error || "server error")
+  }
+
+  mockApiCall$(){
+     return this.http.get<any>('assets/users.json');
   }
 
 }

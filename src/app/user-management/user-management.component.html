@@ -7,7 +7,7 @@
 
   <!-- ngFor below will need to be modified when we included real users with real properties -->
 
-    <div class="individual-user" *ngFor="let userName of users">
+    <div class="individual-user" data-test="individualUser" *ngFor="let userName of users">
       <div class="name">
         <p>{{userName}}</p>
       </div>

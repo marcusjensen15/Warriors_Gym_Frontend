@@ -12,9 +12,10 @@ export class UserManagementComponent implements OnInit {
 
   // users are dummy values in case there is no API connected
 
-  public users = ["User 1", "User 2", "User 3", "User 4"];
+  public users = ["User 1", "User 2", "User 3", "User 4", "User 5"];
   public result : string[] = [];
   public errorMsg: string;
+  mockUsers$;
 
 
   constructor(private api:GetApiService, public authService:AuthServiceService) {}
@@ -22,10 +23,15 @@ export class UserManagementComponent implements OnInit {
   //This is a basic API Call. Adjust with real users.
 
   ngOnInit() {
+    // below is strictly for testing
+
+    this.mockUsers$ = this.api.mockApiCall$()
+
+    // above is strictly for testing.
 
     this.api.getUsers().subscribe(
   data => {
-          // console.log("get api data", Array.isArray(data));
+          console.log("get api data", data);
           data.forEach((element: any) => {this.result.push(element.email);
           });
           this.users = this.result;
