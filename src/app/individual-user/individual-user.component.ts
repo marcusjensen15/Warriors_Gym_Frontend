@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-individual-user',
@@ -8,9 +8,17 @@ import { Router } from "@angular/router";
 })
 export class IndividualUserComponent implements OnInit {
 
-  constructor(public router:Router) { }
+  userEmail = "";
+  constructor( private activatedRoute: ActivatedRoute) {
 
-  ngOnInit(): void {
+  }
+
+  ngOnInit(){
+    // Works first time only
+    console.log(this.activatedRoute.snapshot.params['name']);
+    this.userEmail = this.activatedRoute.snapshot.params['name'];
+    // For later use, updates everytime you change route
+    this.activatedRoute.params.subscribe((params) => {console.log(params['name'])});
   }
 
 }
