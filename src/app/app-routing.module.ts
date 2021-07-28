@@ -19,13 +19,7 @@ const routes: Routes = [
   { path: 'quiz', component: QuizComponent },
   { path: 'users-management', component: UserManagementComponent, canActivate:[AuthGuard] },
   { path: 'add-question', component: AddQuestionComponent },
-  { path: 'individual-user', component: IndividualUserComponent,
-      children: [
-        { path: 'individual-user/:name',
-          component: IndividualUserComponent
-        }
-      ]
-  }
+  { path: 'individual-user/:name', component: IndividualUserComponent}
 ];
 
 @NgModule({
