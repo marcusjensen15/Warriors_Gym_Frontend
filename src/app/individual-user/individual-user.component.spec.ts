@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IndividualUserComponent } from './individual-user.component';
+import { RouterTestingModule} from "@angular/router/testing";
+import { HttpClientTestingModule} from "@angular/common/http/testing";
+
 
 describe('IndividualUserComponent', () => {
   let component: IndividualUserComponent;
@@ -8,7 +11,8 @@ describe('IndividualUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IndividualUserComponent ]
+      declarations: [ IndividualUserComponent ],
+      imports: [RouterTestingModule, HttpClientTestingModule]
     })
     .compileComponents();
   });
@@ -22,4 +26,17 @@ describe('IndividualUserComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should show an individual user', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="individualUser-email"]')).toBeTruthy();
+  });
+
+  it('should show an individual user', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="individualUser-name"]')).toBeTruthy();
+  });
+
+  it('should show an individual user', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="individualUser-id"]')).toBeTruthy();
+  });
+
 });

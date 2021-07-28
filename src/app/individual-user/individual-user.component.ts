@@ -10,7 +10,7 @@ import { GetApiService} from "../get-api.service";
 export class IndividualUserComponent implements OnInit {
 
   public userEmail : string;
-  public result : any;
+  public result = <any> {};
   public errorMsg: string;
   constructor( private activatedRoute: ActivatedRoute, private api:GetApiService) {
 
