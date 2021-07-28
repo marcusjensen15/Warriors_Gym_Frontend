@@ -24,13 +24,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthGuard } from './auth.guard';
 import { AuthServiceService } from './auth-service.service';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { IndividualUserComponent } from './individual-user/individual-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     routingComponents,
-    AddQuestionComponent
+    AddQuestionComponent,
+    IndividualUserComponent
   ],
   imports: [
     BrowserModule,
