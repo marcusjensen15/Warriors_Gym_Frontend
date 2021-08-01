@@ -12,13 +12,18 @@ export class UserManagementComponent implements OnInit {
 
   // users are dummy values in case there is no API connected
 
-  public users = ["User 1", "User 2", "User 3", "User 4", "User 5"];
-  public result : string[] = [];
+  public result = [] as any;
   public errorMsg: string;
   mockUsers$;
 
+  deleteUserHandler(userIdToDelete){
+    this.api.deleteUser(userIdToDelete).subscribe();
+  }
 
-  constructor(private api:GetApiService, public authService:AuthServiceService) {}
+
+  constructor(private api:GetApiService, public authService:AuthServiceService) {
+
+  }
 
   //This is a basic API Call. Adjust with real users.
 
@@ -31,10 +36,10 @@ export class UserManagementComponent implements OnInit {
 
     this.api.getUsers().subscribe(
   data => {
-          console.log("get api data", data);
-          data.forEach((element: any) => {this.result.push(element.email);
+          // console.log("get api data", data);
+          data.forEach((element: any) => {this.result.push({"email": element.email, "id": element._id});
           });
-          this.users = this.result;
+          console.log(this.result);
         },
       error => this.errorMsg = error
     )

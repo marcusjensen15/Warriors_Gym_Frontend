@@ -16,6 +16,7 @@ export class GetApiService {
   ) { }
 
   // Need all other GET calls here. Using the getToken() method.
+  // This class should probably be renamed to 'API Service'. I'll put all api calls in here and if it is appropriate to segment them out into different services, do so.
 
   getUsers(): Observable<any>{
     return this.http.get('http://localhost:3000/users', {
@@ -26,6 +27,17 @@ export class GetApiService {
       .pipe(
         catchError(this.errorHandler));
   };
+
+  deleteUser(userIdToDelete): Observable<unknown> {
+    const url = `http://localhost:3000/users/${userIdToDelete}`;
+    return this.http.delete(url, {
+      headers: {
+        "x-auth-token": <string>this.authService.getToken()
+      }
+    })
+      .pipe(
+        catchError(this.errorHandler));
+  }
 
   errorHandler(error: HttpErrorResponse){
     return throwError(error.error || "server error")
