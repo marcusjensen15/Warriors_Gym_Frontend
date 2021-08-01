@@ -7,13 +7,13 @@
 
   <!-- ngFor below will need to be modified when we included real users with real properties -->
 
-    <div class="individual-user" data-test="individualUser" *ngFor="let userName of users">
+    <div class="individual-user" data-test="individualUser" *ngFor="let user of result">
       <div class="name">
-        <p>{{userName}}</p>
+        <p>{{user.email}}</p>
       </div>
       <div class="button-container">
-        <button mat-raised-button color="accent" routerLink="/individual-user/{{userName}}">User Details</button>
-        <button mat-raised-button color="warn">Delete</button>
+        <button mat-raised-button color="accent" routerLink="/individual-user/{{user.email}}">User Details</button>
+        <button mat-raised-button color="warn" (click)="deleteUserHandler(user.id)">Delete</button>
       </div>
     </div>
 </div>
