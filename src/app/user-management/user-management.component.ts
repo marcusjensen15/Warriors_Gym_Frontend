@@ -16,8 +16,13 @@ export class UserManagementComponent implements OnInit {
   public errorMsg: string;
   mockUsers$;
 
-  deleteUserHandler(userIdToDelete){
-    this.api.deleteUser(userIdToDelete).subscribe();
+  async deleteUserHandler (userIdToDelete){
+    await this.api.deleteUser(userIdToDelete).subscribe();
+    this.refresh();
+  }
+  
+  refresh(): void {
+    window.location.reload();
   }
 
 
