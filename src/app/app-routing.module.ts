@@ -9,6 +9,7 @@ import { SignupComponent } from './signup/signup.component';
 import { UserManagementComponent } from './user-management/user-management.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { IndividualUserComponent } from "./individual-user/individual-user.component";
+import { AddUserComponent} from "./add-user/add-user.component";
 import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'quiz', component: QuizComponent },
   { path: 'users-management', component: UserManagementComponent, canActivate:[AuthGuard] },
   { path: 'add-question', component: AddQuestionComponent },
-  { path: 'individual-user/:name', component: IndividualUserComponent}
+  { path: 'individual-user/:name', component: IndividualUserComponent},
+  { path: 'add-user', component: AddUserComponent}
 ];
 
 @NgModule({
@@ -27,4 +29,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [HomeComponent,SignupComponent,LoginComponent,MuscleGroupsComponent,QuizComponent,UserManagementComponent,AddQuestionComponent, IndividualUserComponent];
+export const routingComponents = [HomeComponent,SignupComponent,LoginComponent,MuscleGroupsComponent,QuizComponent,UserManagementComponent,AddQuestionComponent, IndividualUserComponent, AddUserComponent];

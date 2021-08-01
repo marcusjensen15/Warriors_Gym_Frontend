@@ -25,6 +25,7 @@ import { AuthGuard } from './auth.guard';
 import { AuthServiceService } from './auth-service.service';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { IndividualUserComponent } from './individual-user/individual-user.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { IndividualUserComponent } from './individual-user/individual-user.compo
     HeaderComponent,
     routingComponents,
     AddQuestionComponent,
-    IndividualUserComponent
+    IndividualUserComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
