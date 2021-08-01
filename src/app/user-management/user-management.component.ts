@@ -20,7 +20,7 @@ export class UserManagementComponent implements OnInit {
     await this.api.deleteUser(userIdToDelete).subscribe();
     this.refresh();
   }
-  
+
   refresh(): void {
     window.location.reload();
   }
