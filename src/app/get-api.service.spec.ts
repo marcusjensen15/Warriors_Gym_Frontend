@@ -19,6 +19,8 @@ describe('GetApiService', () => {
 
     // Spy on and mock HTTP client
 
+    // Need to mock and test delete function
+
     httpClient = TestBed.get(HttpClient);
 
     const usersMock = [
