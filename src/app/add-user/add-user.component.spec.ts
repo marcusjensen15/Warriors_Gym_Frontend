@@ -22,4 +22,24 @@ describe('AddUserComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should show add question title', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="nameInput"]')).toBeTruthy();
+  });
+
+  it('should show add question title', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="emailInput"]')).toBeTruthy();
+  });
+
+  it('should show add question title', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="passwordInput"]')).toBeTruthy();
+  });
+
+  it('should show add question title', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="isManagerInput"]')).toBeTruthy();
+  });
+
+  it('should show add question title', () => {
+    expect(fixture.nativeElement.querySelector('[data-test="isAdminInput"]')).toBeTruthy();
+  });
 });

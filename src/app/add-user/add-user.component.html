@@ -4,9 +4,9 @@
   <form class="example-form">
     <div class="form-wrapper">
       <div class="input-wrapper">
-        <mat-form-field data-test="loginEmailField" class="login-input">
+        <mat-form-field class="login-input">
           <mat-label>Name</mat-label>
-          <input type="email" matInput
+          <input data-test="nameInput" type="email" matInput
                  formControlName="email"
                  placeholder="Sam Smith">
           <mat-error>
@@ -17,9 +17,9 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field data-test="loginEmailField" class="login-input">
+        <mat-form-field class="login-input">
           <mat-label>Email Address</mat-label>
-          <input type="email" matInput
+          <input data-test="emailInput" type="email" matInput
                  formControlName="email"
                  placeholder="Ex. pat@example.com">
           <mat-error>
@@ -30,19 +30,18 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field data-test="loginPasswordField" class="login-input">
+        <mat-form-field class="login-input">
           <mat-label>Password</mat-label>
-          <input type="password" matInput formControlName="password">
+          <input data-test="passwordInput" type="password" matInput formControlName="password">
           <mat-error>
             Password is <strong>required</strong>
           </mat-error>
         </mat-form-field>
 
         <div class="radio-button-container">
-<!--          <mat-checkbox data-test="questionOneInput" class="radio-option" value="1">User is a Manager </mat-checkbox>-->
-          <mat-checkbox class="radio-option">User is a Manager </mat-checkbox>
+          <mat-checkbox data-test="isManagerInput" class="radio-option">User is a Manager </mat-checkbox>
           <br>
-          <mat-checkbox class="radio-option">User is an Admin </mat-checkbox>
+          <mat-checkbox data-test="isAdminInput" class="radio-option">User is an Admin </mat-checkbox>
 
         </div>
 
@@ -52,9 +51,3 @@
     </div>
   </form>
 </div>
-
-<!--name-->
-<!--email-->
-<!--password-->
-<!--isAdmin-->
-<!--isManager-->
