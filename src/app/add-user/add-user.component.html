@@ -1,1 +1,53 @@
-<p>add-user works!</p>
+<div class="add-user-component-container">
+  <p class="add-user-component-header">Add User</p>
+
+  <form class="example-form">
+    <div class="form-wrapper">
+      <div class="input-wrapper">
+        <mat-form-field class="login-input">
+          <mat-label>Name</mat-label>
+          <input data-test="nameInput" type="email" matInput
+                 formControlName="email"
+                 placeholder="Sam Smith">
+          <mat-error>
+            Please enter a valid email address
+          </mat-error>
+          <mat-error>
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="login-input">
+          <mat-label>Email Address</mat-label>
+          <input data-test="emailInput" type="email" matInput
+                 formControlName="email"
+                 placeholder="Ex. pat@example.com">
+          <mat-error>
+            Please enter a valid email address
+          </mat-error>
+          <mat-error>
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="login-input">
+          <mat-label>Password</mat-label>
+          <input data-test="passwordInput" type="password" matInput formControlName="password">
+          <mat-error>
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <div class="radio-button-container">
+          <mat-checkbox data-test="isManagerInput" class="radio-option">User is a Manager </mat-checkbox>
+          <br>
+          <mat-checkbox data-test="isAdminInput" class="radio-option">User is an Admin </mat-checkbox>
+
+        </div>
+
+
+        <button mat-raised-button>Login</button>
+      </div>
+    </div>
+  </form>
+</div>

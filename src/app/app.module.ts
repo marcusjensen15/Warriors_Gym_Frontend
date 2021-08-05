@@ -26,6 +26,7 @@ import { AuthServiceService } from './auth-service.service';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { IndividualUserComponent } from './individual-user/individual-user.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import {MatCheckbox, MatCheckboxModule} from "@angular/material/checkbox";
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { AddUserComponent } from './add-user/add-user.component';
     MatFormFieldModule,
     MatInputModule,
     MatRadioModule,
+    MatCheckboxModule,
     MatSelectModule,
     HttpClientModule,
     FormsModule,
