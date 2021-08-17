@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<div class="add-question-content-wrapper">
+<form #addQuestion="ngForm" (ngSubmit)="onQuestionFormSubmit(addQuestion.value)" class="add-question-content-wrapper">
   <div class="add-question-heading-wrapper">
     <p data-test="questionTitle" class="header-text">Add Question</p>
   </div>
@@ -9,8 +9,7 @@
     <mat-form-field appearance="fill">
       <mat-label data-test="muscleGroupInput" span="dropdown-label">Select Muscle Group</mat-label>
       <mat-select aria-placeholder="Select Muscle Group">
-        <mat-option value="one">First option</mat-option>
-        <mat-option value="two">Second option</mat-option>
+        <mat-option value="{{muscleGroup}}" *ngFor="let muscleGroup of muscleGroups">{{muscleGroup}}</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
@@ -34,8 +33,9 @@
 </div>
   <div class="button-container">
     <div class="button-wrapper">
-      <button data-test="addQuestionButton" mat-raised-button>Add Question</button>
+      <button type="submit" value="submit" data-test="addQuestionButton" mat-raised-button>Add Question</button>
     </div>
   </div>
-</div>
+</form>
+
 
