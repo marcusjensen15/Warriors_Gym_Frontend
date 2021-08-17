@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {GetApiService} from '../get-api.service';
+
+
 
 @Component({
   selector: 'app-add-user',
@@ -7,13 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddUserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api:GetApiService) { }
 
   ngOnInit(): void {
   }
 
   onFormSubmit(data){
-    console.log(data);
+    this.api.addUser(data).subscribe(     res =>{
+      console.log(res);
+    });
   }
 
 }
