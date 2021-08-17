@@ -39,6 +39,14 @@ export class GetApiService {
         catchError(this.errorHandler));
   }
 
+  addUser(userPayload: any): Observable<any>  {
+    const url = 'http://localhost:3000/users';
+    // const body = {name: userPayload.nameInput, email: userPayload.emailInput, password: userPayload.passwordInput, isManager: userPayload.isManagerInput, isAdmin: userPayload.isAdminInput};
+    const body = {name: userPayload.nameInput, email: userPayload.emailInput, password: userPayload.passwordInput};
+    console.log(body);
+    return this.http.post<any>(url, body);
+  }
+
   errorHandler(error: HttpErrorResponse){
     return throwError(error.error || "server error")
   }
