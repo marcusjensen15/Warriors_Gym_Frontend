@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<div class="add-question-content-wrapper">
+<form #addQuestion="ngForm" (ngSubmit)="onQuestionFormSubmit(addQuestion.value)" class="add-question-content-wrapper">
   <div class="add-question-heading-wrapper">
     <p data-test="questionTitle" class="header-text">Add Question</p>
   </div>
@@ -8,15 +8,14 @@
   <div class="dropdown-input-container">
     <mat-form-field appearance="fill">
       <mat-label data-test="muscleGroupInput" span="dropdown-label">Select Muscle Group</mat-label>
-      <mat-select aria-placeholder="Select Muscle Group">
-        <mat-option value="one">First option</mat-option>
-        <mat-option value="two">Second option</mat-option>
+      <mat-select ngModel name="muscleGroup" aria-placeholder="Select Muscle Group">
+        <mat-option  *ngFor="let muscleGroup of muscleGroups" [value]="muscleGroup">{{muscleGroup}}</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
 
   <mat-form-field class="question-text-container" appearance="fill">
-    <textarea data-test="questionTextInput" rows="5" matInput placeholder="Add your question here"></textarea>
+    <textarea ngModel name="questionTextInput" data-test="questionTextInput" rows="5" matInput placeholder="Add your question here"></textarea>
   </mat-form-field>
 
 <div class="selection-option-wrapper">
@@ -25,17 +24,18 @@
       <mat-label class="selection-option-label">Input possible answers and select the correct option</mat-label>
     </div>
     <div class="selection-option-container">
-      <mat-radio-button data-test="questionOneInput" class="selection-option" value="1"><input type="text" class="text-answer-option-field"></mat-radio-button>
-      <mat-radio-button data-test="questionTwoInput" class="selection-option" value="2"><input type="text" class="text-answer-option-field"></mat-radio-button>
-      <mat-radio-button data-test="questionThreeInput" class="selection-option" value="3"><input type="text" class="text-answer-option-field"></mat-radio-button>
-      <mat-radio-button data-test="questionFourInput" class="selection-option" value="4"><input type="text" class="text-answer-option-field"></mat-radio-button>
+      <mat-radio-button data-test="questionOneInput" class="selection-option" value="1"><input ngModel name="optionOne" type="text" class="text-answer-option-field"></mat-radio-button>
+      <mat-radio-button data-test="questionTwoInput" class="selection-option" value="2"><input ngModel name="optionTwo" type="text" class="text-answer-option-field"></mat-radio-button>
+      <mat-radio-button data-test="questionThreeInput" class="selection-option" value="3"><input ngModel name="optionThree" type="text" class="text-answer-option-field"></mat-radio-button>
+      <mat-radio-button data-test="questionFourInput" class="selection-option" value="4"><input ngModel name="optionFour" type="text" class="text-answer-option-field"></mat-radio-button>
     </div>
   </mat-radio-group>
 </div>
   <div class="button-container">
     <div class="button-wrapper">
-      <button data-test="addQuestionButton" mat-raised-button>Add Question</button>
+      <button type="submit" value="submit" data-test="addQuestionButton" mat-raised-button>Add Question</button>
     </div>
   </div>
-</div>
+</form>
+
 
