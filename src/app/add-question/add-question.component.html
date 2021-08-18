@@ -8,8 +8,8 @@
   <div class="dropdown-input-container">
     <mat-form-field appearance="fill">
       <mat-label data-test="muscleGroupInput" span="dropdown-label">Select Muscle Group</mat-label>
-      <mat-select aria-placeholder="Select Muscle Group">
-        <mat-option value="{{muscleGroup}}" *ngFor="let muscleGroup of muscleGroups">{{muscleGroup}}</mat-option>
+      <mat-select [(ngModel)]="selectedMuscleGroup" name="muscleGroup" aria-placeholder="Select Muscle Group">
+        <mat-option  *ngFor="let muscleGroup of muscleGroups" [value]="muscleGroup">{{muscleGroup}}</mat-option>
       </mat-select>
     </mat-form-field>
   </div>
