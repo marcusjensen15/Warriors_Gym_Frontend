@@ -15,6 +15,7 @@ export class AddQuestionComponent implements OnInit {
   }
 
   onQuestionFormSubmit(data){
+    //Need to figure out how to 'bundle' the answers and the radio buttons together, so each answer has a correct/incorrect flag.
     console.log(data);
   }
 
