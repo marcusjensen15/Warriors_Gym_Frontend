@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class AddQuestionComponent implements OnInit {
 
   public muscleGroups = ["Tournaments", "Assessments", "Training", "Resources", "Courses", "Administration", "Content", "Metrics"];
-  public selectedMuscleGroup: string;
 
   constructor() { }
 
@@ -16,7 +15,7 @@ export class AddQuestionComponent implements OnInit {
   }
 
   onQuestionFormSubmit(data){
-    console.log(data.muscleGroup);
+    console.log(data);
   }
 
 }
