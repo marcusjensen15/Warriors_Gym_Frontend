@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class AddQuestionComponent implements OnInit {
 
   public muscleGroups = ["Tournaments", "Assessments", "Training", "Resources", "Courses", "Administration", "Content", "Metrics"];
-
   constructor() { }
 
   ngOnInit(): void {
