@@ -19,15 +19,15 @@
   </mat-form-field>
 
 <div class="selection-option-wrapper">
-  <mat-radio-group>
+  <mat-radio-group ngModel name="correctAnswerPosition">
     <div class="selection-option-label-container">
       <mat-label class="selection-option-label">Input possible answers and select the correct option</mat-label>
     </div>
     <div class="selection-option-container">
-      <mat-radio-button data-test="questionOneInput" class="selection-option" value="1"><input ngModel name="optionOne" type="text" class="text-answer-option-field"></mat-radio-button>
-      <mat-radio-button data-test="questionTwoInput" class="selection-option" value="2"><input ngModel name="optionTwo" type="text" class="text-answer-option-field"></mat-radio-button>
-      <mat-radio-button data-test="questionThreeInput" class="selection-option" value="3"><input ngModel name="optionThree" type="text" class="text-answer-option-field"></mat-radio-button>
-      <mat-radio-button data-test="questionFourInput" class="selection-option" value="4"><input ngModel name="optionFour" type="text" class="text-answer-option-field"></mat-radio-button>
+      <mat-radio-button data-test="questionOneInput" class="selection-option" value="0"><input ngModel name="optionOne" type="text" class="text-answer-option-field"></mat-radio-button>
+      <mat-radio-button data-test="questionTwoInput" class="selection-option" value="1"><input ngModel name="optionTwo" type="text" class="text-answer-option-field"></mat-radio-button>
+      <mat-radio-button data-test="questionThreeInput" class="selection-option" value="2"><input ngModel name="optionThree" type="text" class="text-answer-option-field"></mat-radio-button>
+      <mat-radio-button data-test="questionFourInput" class="selection-option" value="3"><input ngModel name="optionFour" type="text" class="text-answer-option-field"></mat-radio-button>
     </div>
   </mat-radio-group>
 </div>

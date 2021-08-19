@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AddQuestionComponent implements OnInit {
 
   public muscleGroups = ["Tournaments", "Assessments", "Training", "Resources", "Courses", "Administration", "Content", "Metrics"];
-
+  // public correctAnswerArrayPosition = null;
   constructor() { }
 
   ngOnInit(): void {
@@ -16,6 +16,7 @@ export class AddQuestionComponent implements OnInit {
 
   onQuestionFormSubmit(data){
     //Need to figure out how to 'bundle' the answers and the radio buttons together, so each answer has a correct/incorrect flag.
+    // data.correctAnswerArrayPostion = this.correctAnswerArrayPosition;
     console.log(data);
   }
 
