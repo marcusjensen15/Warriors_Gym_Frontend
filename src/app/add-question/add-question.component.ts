@@ -14,8 +14,19 @@ export class AddQuestionComponent implements OnInit {
   }
 
   onQuestionFormSubmit(data){
-    //Need to figure out how to 'bundle' the answers and the radio buttons together, so each answer has a correct/incorrect flag.
-    console.log(data);
+    console.log(this.correctlyFormPayload(data));
+  }
+
+  correctlyFormPayload(data){
+
+    let correctlyFormedData = {
+      possibleAnswers:[data.optionOne,data.optionTwo,data.optionThree,data.optionFour],
+      muscleGroup: data.muscleGroup,
+      questionTextInput: data.questionTextInput,
+      correctAnswerPosition: parseInt(data.correctAnswerPosition)
+    }
+
+    return correctlyFormedData
   }
 
 }
