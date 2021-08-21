@@ -48,11 +48,8 @@ export class GetApiService {
 
     addQuestion(questionPayload: any): Observable<any>  {
     const url = 'http://localhost:3000/questions';
-    //need to add header this is why we are getting the error
-    // const body = {name: userPayload.nameInput, email: userPayload.emailInput, password: userPayload.passwordInput};
-    const body = {possibleAnswers: questionPayload.possibleAnswers, question: questionPayload.question, type: questionPayload.type, category: questionPayload.category, correctAnswer: questionPayload.correctAnswer};
-    console.log(body);
-    return this.http.post<any>(url, body, {
+    console.log(questionPayload);
+    return this.http.post<any>(url, questionPayload, {
       headers: {
         "x-auth-token": <string>this.authService.getToken()
       }

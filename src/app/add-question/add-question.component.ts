@@ -15,31 +15,20 @@ export class AddQuestionComponent implements OnInit {
   }
 
   onQuestionFormSubmit(data){
-    // console.log(this.correctlyFormPayload(data));
-
-    //below is just to make sure we are making API call correctly. Need to revise backend to correclty accept data in this shape.
-
-    const fakePayload = {
-      possibleAnswers: ["here is", "some fake", "answers from front end", "choosy choose"],
-      question: "Hello from the front end",
-      type: "hi from front end",
-      category: "some front end fun",
-      correctAnswer: "frontend correct answer"
-    };
-
-    this.api.addQuestion(fakePayload).subscribe(     res =>{
+    
+    this.api.addQuestion(this.correctlyFormPayload(data)).subscribe(     res =>{
       console.log(res);
     });
 
-    console.log(fakePayload);
+    console.log(this.correctlyFormPayload(data));
   }
 
   correctlyFormPayload(data){
 
     let correctlyFormedData = {
       possibleAnswers:[data.optionOne,data.optionTwo,data.optionThree,data.optionFour],
-      muscleGroup: data.muscleGroup,
-      questionTextInput: data.questionTextInput,
+      category: data.muscleGroup,
+      question: data.questionTextInput,
       correctAnswerPosition: parseInt(data.correctAnswerPosition)
     }
 
