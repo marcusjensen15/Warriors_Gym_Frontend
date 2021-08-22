@@ -5,7 +5,7 @@ import { GetApiService} from "../get-api.service";
 @Component({
   selector: 'app-individual-user',
   templateUrl: './individual-user.component.html',
-  styleUrls: ['./individual-user.component.sass']
+  styleUrls: ['./individual-user.component.scss']
 })
 export class IndividualUserComponent implements OnInit {
 
