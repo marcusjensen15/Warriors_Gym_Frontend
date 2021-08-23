@@ -40,7 +40,7 @@ export class IndividualUserComponent implements OnInit {
       },
       error => this.errorMsg = error
     )
-    
+
   }
 
 }
