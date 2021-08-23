@@ -12,16 +12,23 @@ export class IndividualUserComponent implements OnInit {
   public userEmail : string;
   public result = <any> {};
   public errorMsg: string;
+
+  async deleteUserHandler (userIdToDelete){
+    await this.api.deleteUser(userIdToDelete).subscribe();
+    this.refresh();
+  };
+
+  refresh(): void {
+    window.location.reload();
+  }
+
   constructor( private activatedRoute: ActivatedRoute, private api:GetApiService) {
 
   }
 
 
-
   ngOnInit(){
     // We are going to need an api call here to get the rest of this data.
-    // We are going to need functions that communicate with the api to delete/edit users.-
-    // Works first time only
 
     this.userEmail = this.activatedRoute.snapshot.params['name'];
 
@@ -33,9 +40,7 @@ export class IndividualUserComponent implements OnInit {
       },
       error => this.errorMsg = error
     )
-
-    // For later use, updates everytime you change route
-    // this.activatedRoute.params.subscribe((params) => {console.log(params['name'])});
+    
   }
 
 }
