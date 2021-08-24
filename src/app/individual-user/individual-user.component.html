@@ -11,7 +11,7 @@
     <div class="user-info-display label" data-test="individualUser-id">User ID</div>
     <div class="user-info-display" data-test="individualUser-id">{{result._id}}</div>
 
-    <button type="submit" value="submit" class="editUserButton" mat-raised-button>Edit User</button>
+    <button type="submit" value="submit" routerLink="/individual-user/edit/{{result.email}}" class="editUserButton" mat-raised-button>Edit User</button>
     <button type="submit" (click)="deleteUserHandler(result._id)" routerLink="/users-management" value="submit" mat-raised-button>Delete User</button>
 
   </div>
