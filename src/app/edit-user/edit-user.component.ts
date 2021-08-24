@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {GetApiService} from "../get-api.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-edit-user',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditUserComponent implements OnInit {
 
-  constructor() { }
+  public userEmail : string;
+  public result = <any> {};
+  public errorMsg: string;
 
-  ngOnInit(): void {
+  constructor(private activatedRoute: ActivatedRoute, private api:GetApiService) { }
+
+  onFormSubmit(data){
+    this.api.addUser(data).subscribe(     res =>{
+      console.log(res);
+    });
+  }
+
+  ngOnInit() {
+
+    this.userEmail = this.activatedRoute.snapshot.params['name'];
+
+    this.api.getUsers().subscribe(
+      data => {
+        let individualUser = data.filter(e => e.email === this.userEmail)
+        console.log(individualUser);
+        this.result = individualUser[0];
+      },
+      error => this.errorMsg = error
+    )
   }
 
 }

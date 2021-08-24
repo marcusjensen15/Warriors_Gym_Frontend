@@ -1,1 +1,66 @@
-<p>edit-user works!</p>
+<!--<p>edit-user works!</p>-->
+
+<div class="add-user-component-container">
+  <app-header></app-header>
+  <p class="add-user-component-header">Edit User</p>
+
+  <form #editUser ="ngForm" (ngSubmit)="onFormSubmit(editUser.value)" class="example-form">
+    <div class="form-wrapper">
+      <div class="input-wrapper">
+        <mat-form-field class="login-input">
+          <mat-label>Name</mat-label>
+          <input
+            required
+            name="nameInput"
+            type="text"
+            data-test="nameInput"
+            type="text"
+            placeholder="Sam Smith"
+            matInput
+            value ="{{result.name}}">
+          <mat-error>
+            Please enter a valid email address
+          </mat-error>
+          <mat-error>
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="login-input">
+          <mat-label>Email Address</mat-label>
+          <input
+            required
+
+            name="emailInput"
+            data-test="emailInput"
+            type="email"
+            value="{{result.email}}"
+            matInput
+            placeholder="Ex. pat@example.com">
+          <mat-error>
+            Please enter a valid email address
+          </mat-error>
+          <mat-error>
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="login-input">
+          <mat-label>Password</mat-label>
+          <input
+            required
+            data-test="passwordInput"
+            type="password"
+            matInput
+            name="passwordInput">
+          <mat-error>
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <button type="submit" value="submit" mat-raised-button>Edit User</button>
+      </div>
+    </div>
+  </form>
+</div>
+
