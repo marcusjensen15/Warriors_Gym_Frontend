@@ -12,15 +12,12 @@
           <input
             required
             name="nameInput"
-            type="text"
+            ngModel
             data-test="nameInput"
             type="text"
             placeholder="Sam Smith"
             matInput
             value ="{{result.name}}">
-          <mat-error>
-            Please enter a valid email address
-          </mat-error>
           <mat-error>
             Email is <strong>required</strong>
           </mat-error>
@@ -30,7 +27,7 @@
           <mat-label>Email Address</mat-label>
           <input
             required
-
+            ngModel
             name="emailInput"
             data-test="emailInput"
             type="email"
@@ -49,6 +46,7 @@
           <mat-label>Password</mat-label>
           <input
             required
+            ngModel
             data-test="passwordInput"
             type="password"
             matInput

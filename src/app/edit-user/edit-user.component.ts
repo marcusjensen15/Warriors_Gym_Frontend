@@ -16,9 +16,23 @@ export class EditUserComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private api:GetApiService) { }
 
   onFormSubmit(data){
-    this.api.addUser(data).subscribe(     res =>{
-      console.log(res);
-    });
+    // this.api.addUser(data).subscribe(     res =>{
+    //   console.log(res);
+    // });
+    this.getEditedValues(data);
+    console.log(data);
+  }
+
+  //below method is a really hacky solution to form not correctly getting values
+  // if the user's name and email are not edited. I'm sure there is a better way to do this
+  
+  getEditedValues(data){
+    if(data.nameInput.length === 0){
+      data.nameInput = this.result.name;
+    }
+    if(data.emailInput.length === 0){
+      data.emailInput = this.result.email;
+    }
   }
 
   ngOnInit() {
