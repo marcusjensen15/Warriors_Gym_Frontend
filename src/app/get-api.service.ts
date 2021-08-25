@@ -48,12 +48,16 @@ export class GetApiService {
 
   //below URL has not yet been written on the backend
   //I think the 'me' route on the backend is pulling values out of a token
-  
+
    editUser(userPayload: any): Observable<any>  {
-    const url = `http://localhost:3000/${userPayload._id}`;
-    const body = {name: userPayload.nameInput, email: userPayload.emailInput, password: userPayload.passwordInput};
+    const url = `http://localhost:3000/users/me`;
+    const body = {name: userPayload.nameInput, email: userPayload.emailInput, password: userPayload.passwordInput, _id:userPayload.id};
     console.log(body);
-    return this.http.put<any>(url, body);
+    return this.http.put<any>(url, body, {
+      headers: {
+        "x-auth-token": <string>this.authService.getToken()
+      }
+    });
   }
 
   addQuestion(questionPayload: any): Observable<any>  {
