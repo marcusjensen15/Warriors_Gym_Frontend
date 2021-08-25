@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetApiService} from "../get-api.service";
 
 @Component({
   selector: 'app-quiz',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuizComponent implements OnInit {
 
-  constructor() { }
+  public quizQuestions = [] as any;
 
-  ngOnInit(): void {
+  constructor(private api:GetApiService) { }
+
+  getQuestionsByCategoryHandler(questionCategory) {
+    return this.api.getQuestionsByCategory(questionCategory).subscribe(
+      data => {
+        data.forEach((element:any) => {this.quizQuestions.push(element);
+        });
+        console.log(this.quizQuestions);
+      }
+    );
+  }
+
+  ngOnInit() {
+    this.getQuestionsByCategoryHandler('Administration');
   }
 
 }
