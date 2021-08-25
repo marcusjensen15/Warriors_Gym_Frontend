@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetApiService} from "../get-api.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-quiz',
@@ -9,8 +10,9 @@ import { GetApiService} from "../get-api.service";
 export class QuizComponent implements OnInit {
 
   public quizQuestions = [] as any;
+  public quizCategory : string;
 
-  constructor(private api:GetApiService) { }
+  constructor(private activatedRoute: ActivatedRoute, private api:GetApiService) { }
 
   getQuestionsByCategoryHandler(questionCategory) {
     return this.api.getQuestionsByCategory(questionCategory).subscribe(
@@ -22,8 +24,13 @@ export class QuizComponent implements OnInit {
     );
   }
 
+  getQuizCateogry(){
+    this.quizCategory = this.activatedRoute.snapshot.params['quizCategory'];
+  }
+
   ngOnInit() {
-    this.getQuestionsByCategoryHandler('Administration');
+    this.getQuizCateogry();
+    this.getQuestionsByCategoryHandler(this.quizCategory);
   }
 
 }
