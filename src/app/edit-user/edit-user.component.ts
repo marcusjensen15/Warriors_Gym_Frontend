@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {GetApiService} from "../get-api.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-edit-user',
@@ -13,7 +13,7 @@ export class EditUserComponent implements OnInit {
   public result = <any> {};
   public errorMsg: string;
 
-  constructor(private activatedRoute: ActivatedRoute, private api:GetApiService) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private api:GetApiService) { }
 
 
 
@@ -23,7 +23,19 @@ export class EditUserComponent implements OnInit {
     });
     // this.getEditedValues(data);
     console.log(data);
+    this.router.navigate(['/users-management']);
+    // this.redirectTo('/users-management');
+
   }
+
+  // redirectTo(uri:string){
+  //   this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
+  //     this.router.navigate([uri]));
+  // }
+
+  // refresh(): void {
+  //   window.location.reload();
+  // }
 
   //below method is a really hacky solution to form not correctly getting values
   // if the user's name and email are not edited. I'm sure there is a better way to do this
