@@ -70,6 +70,16 @@ export class GetApiService {
   });
 }
 
+  getQuestionsByCategory(questionCategory: string): Observable<any>{
+    return this.http.get(`http://localhost:3000/questions/${questionCategory}`, {
+      headers: {
+        "x-auth-token": <string>this.authService.getToken()
+      }
+    })
+      .pipe(
+        catchError(this.errorHandler));
+  };
+
 
   errorHandler(error: HttpErrorResponse){
     return throwError(error.error || "server error")
