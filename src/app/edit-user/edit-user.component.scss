@@ -1,0 +1,73 @@
+@import "../../assets/variables";
+
+.add-user-component-container{
+  background-color: $scw-grey;
+  height: 100%;
+}
+
+.add-user-component-header{
+  color: $scw-white;
+  font-size: 2vw;
+  padding-top: 5%;
+  text-align: center;
+  padding-bottom: 5%;
+}
+
+.login-container{
+  background-color: $scw-grey;
+  width: 100%;
+  height: 100%;
+}
+
+.example-form-container{
+  padding-top: 5%;
+}
+
+.login-input{
+  background-color: $scw-white;
+  margin: 2%;
+  width: 96%;
+  border-radius: 4px;
+}
+
+.input-wrapper{
+  width: 100%;
+}
+
+.example-form{
+  padding-top: 3%;
+  width: 25%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid white;
+}
+
+.form-wrapper{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.radio-option{
+  color: $scw-white;
+  padding-left: 2%;
+  padding-top: 5%;
+}
+
+radio-button-container{
+  width: 100%;
+}
+
+.mat-raised-button{
+  width: 90%;
+  margin: 5%;
+  background-color: $scw-yellow-dark;
+  color: $scw-white;
+  &:hover{
+    background-color: $scw-yellow-light;
+  }
+}

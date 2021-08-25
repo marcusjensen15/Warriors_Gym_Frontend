@@ -11,6 +11,7 @@ import { AddQuestionComponent } from './add-question/add-question.component';
 import { IndividualUserComponent } from "./individual-user/individual-user.component";
 import { AddUserComponent} from "./add-user/add-user.component";
 import { AuthGuard } from './auth.guard';
+import { EditUserComponent } from "./edit-user/edit-user.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'users-management', component: UserManagementComponent, canActivate:[AuthGuard] },
   { path: 'add-question', component: AddQuestionComponent },
   { path: 'individual-user/:name', component: IndividualUserComponent},
+  { path: 'individual-user/edit/:name', component: EditUserComponent},
   { path: 'add-user', component: AddUserComponent}
 ];
 
@@ -29,4 +31,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [HomeComponent,SignupComponent,LoginComponent,MuscleGroupsComponent,QuizComponent,UserManagementComponent,AddQuestionComponent, IndividualUserComponent, AddUserComponent];
+export const routingComponents = [HomeComponent,SignupComponent,LoginComponent,MuscleGroupsComponent,QuizComponent,UserManagementComponent,AddQuestionComponent, IndividualUserComponent, AddUserComponent, EditUserComponent];

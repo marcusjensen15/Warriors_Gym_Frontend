@@ -27,6 +27,7 @@ import { TokenInterceptorService } from './token-interceptor.service';
 import { IndividualUserComponent } from './individual-user/individual-user.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import {MatCheckbox, MatCheckboxModule} from "@angular/material/checkbox";
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import {MatCheckbox, MatCheckboxModule} from "@angular/material/checkbox";
     routingComponents,
     AddQuestionComponent,
     IndividualUserComponent,
-    AddUserComponent
+    AddUserComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

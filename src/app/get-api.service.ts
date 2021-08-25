@@ -46,15 +46,29 @@ export class GetApiService {
     return this.http.post<any>(url, body);
   }
 
-    addQuestion(questionPayload: any): Observable<any>  {
-    const url = 'http://localhost:3000/questions';
-    console.log(questionPayload);
-    return this.http.post<any>(url, questionPayload, {
+  //below URL has not yet been written on the backend
+  //I think the 'me' route on the backend is pulling values out of a token
+
+   editUser(userPayload: any): Observable<any>  {
+    const url = `http://localhost:3000/users/me`;
+    const body = {name: userPayload.nameInput, email: userPayload.emailInput, password: userPayload.passwordInput, _id:userPayload.id};
+    console.log(body);
+    return this.http.put<any>(url, body, {
       headers: {
         "x-auth-token": <string>this.authService.getToken()
       }
     });
   }
+
+  addQuestion(questionPayload: any): Observable<any>  {
+  const url = 'http://localhost:3000/questions';
+  console.log(questionPayload);
+  return this.http.post<any>(url, questionPayload, {
+    headers: {
+      "x-auth-token": <string>this.authService.getToken()
+    }
+  });
+}
 
 
   errorHandler(error: HttpErrorResponse){
