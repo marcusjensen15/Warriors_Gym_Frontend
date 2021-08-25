@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent},
   { path: 'login', component: LoginComponent },
   { path: 'musclegroups', component: MuscleGroupsComponent },
-  { path: 'quiz', component: QuizComponent },
+  { path: 'quiz/:quizCategory', component: QuizComponent },
   { path: 'users-management', component: UserManagementComponent, canActivate:[AuthGuard] },
   { path: 'add-question', component: AddQuestionComponent },
   { path: 'individual-user/:name', component: IndividualUserComponent},
