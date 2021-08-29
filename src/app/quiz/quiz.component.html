@@ -1,28 +1,28 @@
 <app-header></app-header>
-
-<div class="quiz-content-wrapper">
+<div class="quiz-content-wrapper" *ngIf="!isFinalQuestion">
   <div class="quiz-heading-wrapper">
-    <p data-test="quizHeader" class="header-text">Dynamic Title (Muscle Group)</p>
+    <p data-test="quizHeader" class="header-text">{{quizCategory}}</p>
   </div>
   <div class="question-box">
-    <p data-test="quizQuestion" class="question-text">Here is some question text that will change dynamically with each question.
-      This is going to be a wonderful app and all of the employees at Secure Code Warrior
-      are going to find tremdous value in using it. I'm just typing a bunch of random
-      plaeholder content.
+    <p data-test="quizQuestion" class="question-text">{{currentQuestion.questionText}}
     </p>
     <div class="option-container">
       <label id="example-radio-group-label">Select your answer:</label>
-      <mat-radio-group class="selection-option-wrapper">
-        <!-- <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
-          {{season}} -->
-          <mat-radio-button data-test="question1" class="selection-option" value="1">Option 1</mat-radio-button>
-          <mat-radio-button data-test="question2" class="selection-option" value="2">Option 2</mat-radio-button>
-          <mat-radio-button data-test="question3" class="selection-option" value="3">Option 3</mat-radio-button>
-          <mat-radio-button data-test="question4" class="selection-option" value="4">Option 4</mat-radio-button>
-      </mat-radio-group>
+      <form #answerSubmission ="ngForm" (ngSubmit)="onSubmitAnswer(answerSubmission.value)">
+        <mat-radio-group name="answerSubmission" ngModel class="selection-option-wrapper">
+            <mat-radio-button data-test="question1" class="selection-option" value="0">{{currentQuestion.possibleAnswers[0]}}</mat-radio-button>
+            <mat-radio-button data-test="question2" class="selection-option" value="1">{{currentQuestion.possibleAnswers[1]}}</mat-radio-button>
+            <mat-radio-button data-test="question3" class="selection-option" value="2">{{currentQuestion.possibleAnswers[2]}}</mat-radio-button>
+            <mat-radio-button data-test="question4" class="selection-option" value="3">{{currentQuestion.possibleAnswers[3]}}</mat-radio-button>
+        </mat-radio-group>
+        <button data-test="quizSubmitButton" value="submit" class="grid-item" mat-raised-button>Submit Answer</button>
+      </form>
     </div>
-    <button data-test="quizSubmitButton" class="grid-item" mat-raised-button>Submit Answer</button>
   </div>
+</div>
+
+<div *ngIf="isFinalQuestion">
+  Bam! end of quiz! you got {{correctAnswerCounter}} questions correct out of {{quizProgressCounter}} total questions!
 </div>
 
 
