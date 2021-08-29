@@ -1,5 +1,4 @@
 <app-header></app-header>
-
 <div class="quiz-content-wrapper">
   <div class="quiz-heading-wrapper">
     <p data-test="quizHeader" class="header-text">{{quizCategory}}</p>
@@ -9,16 +8,18 @@
     </p>
     <div class="option-container">
       <label id="example-radio-group-label">Select your answer:</label>
-      <mat-radio-group class="selection-option-wrapper">
-        <!-- <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
-          {{season}} -->
-          <mat-radio-button data-test="question1" class="selection-option" value="0">{{currentQuestion.possibleAnswers[0]}}</mat-radio-button>
-          <mat-radio-button data-test="question2" class="selection-option" value="1">{{currentQuestion.possibleAnswers[1]}}</mat-radio-button>
-          <mat-radio-button data-test="question3" class="selection-option" value="2">{{currentQuestion.possibleAnswers[2]}}</mat-radio-button>
-          <mat-radio-button data-test="question4" class="selection-option" value="3">{{currentQuestion.possibleAnswers[3]}}</mat-radio-button>
-      </mat-radio-group>
+      <form #answerSubmission ="ngForm" (ngSubmit)="onSubmitAnswer(answerSubmission.value)">
+        <mat-radio-group name="answerSubmission" ngModel class="selection-option-wrapper">
+          <!-- <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+            {{season}} -->
+            <mat-radio-button data-test="question1" class="selection-option" value="0">{{currentQuestion.possibleAnswers[0]}}</mat-radio-button>
+            <mat-radio-button data-test="question2" class="selection-option" value="1">{{currentQuestion.possibleAnswers[1]}}</mat-radio-button>
+            <mat-radio-button data-test="question3" class="selection-option" value="2">{{currentQuestion.possibleAnswers[2]}}</mat-radio-button>
+            <mat-radio-button data-test="question4" class="selection-option" value="3">{{currentQuestion.possibleAnswers[3]}}</mat-radio-button>
+        </mat-radio-group>
+        <button data-test="quizSubmitButton" value="submit" class="grid-item" mat-raised-button>Submit Answer</button>
+      </form>
     </div>
-    <button data-test="quizSubmitButton" class="grid-item" mat-raised-button>Submit Answer</button>
   </div>
 </div>
 

@@ -48,7 +48,8 @@ export class QuizComponent implements OnInit {
     );
   }
 
-  getSubmittedAnswerArrayPosition(){
+  getSubmittedAnswerArrayPosition(selectedAnswerPosition){
+    this.userSubmittedAnswer = parseInt(selectedAnswerPosition.answerSubmission);
     //will collect the answer submitted by the user, and set the userSubmittedAnser
   }
 
@@ -61,20 +62,31 @@ export class QuizComponent implements OnInit {
   adjustQuizProgress(){
     //will count the 'question number' that the user is on
     //adjust 'quizProgressCounter' accordingly
+    this.quizProgressCounter++;
   }
 
   getCorrectAnswerArrayPosition(){
     //Get the correct answer position of the current question via API.
+    console.log(this.currentQuestion.correctAnswerPosition);
   }
 
   adjustScore(){
     //will compare userSubmittedAnswer v correctAnswerArrayPosition, and increment
     //correctAnswerCounter if they are the same
+
+    if (this.currentQuestion.correctAnswerPosition === this.userSubmittedAnswer){
+      this.correctAnswerCounter++;
+    }
   };
 
   serveNextQuestion(){
     //will serve the next question after the user submits an answer
     //will also check to see if the current question is the last question
+    // I maybe don't need this because setQuestion() does the same thing
+
+    if (this.quizProgressCounter === this.quizQuestions.length){
+      this.isFinalQuestion = true;
+    }
   };
 
   isFinalQuestionCheck(){
@@ -83,15 +95,21 @@ export class QuizComponent implements OnInit {
     //will conditionally render 'results' instead of another question
   };
 
-  onSubmitAnswer(){
+  onSubmitAnswer(selectedAnswer){
     //will call all applicable functions:
-    // getCorrectAnswerArrayPosition ->
+    this.getCorrectAnswerArrayPosition();
+    this.getSubmittedAnswerArrayPosition(selectedAnswer);
+    console.log(this.userSubmittedAnswer);
+
+    // console.log(parseInt(selectedAnswer.answerSubmission));
+    // console.log(selectedAnswer.answerSubmission);
+    // ->
     // getSubmittedAnswerArrayPosition ->
     // adjustScore ->
     // adjustQuizProgress ->
     // serveNextQuestion ->
     // isFinalQuestionCheck ->
-
+    console.log('clicked')
   };
 
   getQuizCateogry(){
@@ -101,8 +119,6 @@ export class QuizComponent implements OnInit {
   async ngOnInit() {
      await this.getQuizCateogry();
      await this.getQuestionsByCategoryHandler(this.quizCategory);
-     // setTimeout( this.setQuestion(this.quizCategory), 2000);
-     // await this.setQuestion(this.quizCategory);
   }
 
 }
