@@ -86,13 +86,6 @@ export class QuizComponent implements OnInit {
     console.log(this.correctAnswerCounter);
   };
 
-  serveNextQuestion(){
-    //will serve the next question after the user submits an answer
-    //will also check to see if the current question is the last question
-    // I maybe don't need this because setQuestion() does the same thing
-
-  };
-
   isFinalQuestionCheck(){
     //will check to see if this is the final question in the quiz, if so
     //on submit turn 'isFinalQuestion' to 'true'

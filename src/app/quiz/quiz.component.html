@@ -1,5 +1,5 @@
 <app-header></app-header>
-<div class="quiz-content-wrapper">
+<div class="quiz-content-wrapper" *ngIf="!isFinalQuestion">
   <div class="quiz-heading-wrapper">
     <p data-test="quizHeader" class="header-text">{{quizCategory}}</p>
   </div>
@@ -21,6 +21,10 @@
       </form>
     </div>
   </div>
+</div>
+
+<div *ngIf="isFinalQuestion">
+  Bam! end of quiz!
 </div>
 
 
