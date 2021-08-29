@@ -9,18 +9,19 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class QuizComponent implements OnInit {
 
+  //array of quiz questions
   public quizQuestions = [] as any;
+
+  //the category for the questions we are getting
   public quizCategory : string;
 
   //will keep track of the total number of questions the user has completed
-
   public quizProgressCounter = 0;
 
   //This variable will hold the current question object
-
   public currentQuestion = <any> {};
 
-  //will count the number of answers the user has gotten correct:
+  //will count the number of answers the user has gotten correct
   public correctAnswerCounter = 0;
 
   //will get the correct answer position of the current question
@@ -30,9 +31,7 @@ export class QuizComponent implements OnInit {
 
   public userSubmittedAnswer : number;
 
-  //false if there are additional questions, true if not.
-  // in HTML file, will render 'results' instead of another question if 'true'
-
+  //false if there are additional questions, true if not. Render message instead of new quiz question
   public isFinalQuestion = false;
 
   constructor(private activatedRoute: ActivatedRoute, private api:GetApiService) { }
@@ -50,12 +49,11 @@ export class QuizComponent implements OnInit {
 
   getSubmittedAnswerArrayPosition(selectedAnswerPosition){
     this.userSubmittedAnswer = parseInt(selectedAnswerPosition.answerSubmission);
-    //will collect the answer submitted by the user, and set the userSubmittedAnser
+    //will collect the answer submitted by the user, and set the userSubmittedAnswer
   }
 
   setQuestion() {
     this.currentQuestion = this.quizQuestions[this.quizProgressCounter];
-    console.log(this.currentQuestion);
     //will set the current question
   };
 
@@ -64,15 +62,11 @@ export class QuizComponent implements OnInit {
     //adjust 'quizProgressCounter' accordingly
     this.quizProgressCounter++;
 
-    console.log(this.quizProgressCounter);
   }
 
   getCorrectAnswerArrayPosition(){
     //Get the correct answer position of the current question via API.
     this.correctAnswerArrayPosition = this.currentQuestion.correctAnswerPosition;
-    console.log(this.correctAnswerArrayPosition);
-
-
   }
 
   adjustScore(){
@@ -83,7 +77,6 @@ export class QuizComponent implements OnInit {
       this.correctAnswerCounter++;
     }
 
-    console.log(this.correctAnswerCounter);
   };
 
   isFinalQuestionCheck(){
@@ -93,19 +86,15 @@ export class QuizComponent implements OnInit {
     if (this.quizProgressCounter === this.quizQuestions.length){
       this.isFinalQuestion = true;
     }
-    console.log(this.isFinalQuestion);
   };
 
   onSubmitAnswer(selectedAnswer){
-    //will call all applicable functions:
-    console.log('clicked');
     this.getCorrectAnswerArrayPosition();
     this.getSubmittedAnswerArrayPosition(selectedAnswer);
     console.log(this.userSubmittedAnswer);
 
     this.adjustScore();
     this.adjustQuizProgress();
-    // serveNextQuestion ->
     this.isFinalQuestionCheck();
     this.setQuestion();
 
@@ -115,9 +104,9 @@ export class QuizComponent implements OnInit {
     this.quizCategory = this.activatedRoute.snapshot.params['quizCategory'];
   }
 
-  async ngOnInit() {
-     await this.getQuizCateogry();
-     await this.getQuestionsByCategoryHandler(this.quizCategory);
+  ngOnInit() {
+    this.getQuizCateogry();
+    this.getQuestionsByCategoryHandler(this.quizCategory);
   }
 
 }
