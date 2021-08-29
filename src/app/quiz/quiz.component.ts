@@ -21,7 +21,7 @@ export class QuizComponent implements OnInit {
   public currentQuestion = <any> {};
 
   //will count the number of answers the user has gotten correct:
-  public correctAnswerCounter : number;
+  public correctAnswerCounter = 0;
 
   //will get the correct answer position of the current question
   public correctAnswerArrayPosition : number;
@@ -67,7 +67,10 @@ export class QuizComponent implements OnInit {
 
   getCorrectAnswerArrayPosition(){
     //Get the correct answer position of the current question via API.
-    console.log(this.currentQuestion.correctAnswerPosition);
+    this.correctAnswerArrayPosition = this.currentQuestion.correctAnswerPosition;
+    console.log(this.correctAnswerArrayPosition);
+
+
   }
 
   adjustScore(){
@@ -77,6 +80,8 @@ export class QuizComponent implements OnInit {
     if (this.currentQuestion.correctAnswerPosition === this.userSubmittedAnswer){
       this.correctAnswerCounter++;
     }
+
+    console.log(this.correctAnswerCounter);
   };
 
   serveNextQuestion(){
@@ -101,11 +106,7 @@ export class QuizComponent implements OnInit {
     this.getSubmittedAnswerArrayPosition(selectedAnswer);
     console.log(this.userSubmittedAnswer);
 
-    // console.log(parseInt(selectedAnswer.answerSubmission));
-    // console.log(selectedAnswer.answerSubmission);
-    // ->
-    // getSubmittedAnswerArrayPosition ->
-    // adjustScore ->
+    this.adjustScore();
     // adjustQuizProgress ->
     // serveNextQuestion ->
     // isFinalQuestionCheck ->
