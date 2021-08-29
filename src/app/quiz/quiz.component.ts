@@ -33,7 +33,7 @@ export class QuizComponent implements OnInit {
   //false if there are additional questions, true if not.
   // in HTML file, will render 'results' instead of another question if 'true'
 
-  public isFinalQuestion : boolean;
+  public isFinalQuestion = false;
 
   constructor(private activatedRoute: ActivatedRoute, private api:GetApiService) { }
 
@@ -63,6 +63,8 @@ export class QuizComponent implements OnInit {
     //will count the 'question number' that the user is on
     //adjust 'quizProgressCounter' accordingly
     this.quizProgressCounter++;
+
+    console.log(this.quizProgressCounter);
   }
 
   getCorrectAnswerArrayPosition(){
@@ -89,28 +91,31 @@ export class QuizComponent implements OnInit {
     //will also check to see if the current question is the last question
     // I maybe don't need this because setQuestion() does the same thing
 
-    if (this.quizProgressCounter === this.quizQuestions.length){
-      this.isFinalQuestion = true;
-    }
   };
 
   isFinalQuestionCheck(){
     //will check to see if this is the final question in the quiz, if so
     //on submit turn 'isFinalQuestion' to 'true'
     //will conditionally render 'results' instead of another question
+    if (this.quizProgressCounter === this.quizQuestions.length){
+      this.isFinalQuestion = true;
+    }
+    console.log(this.isFinalQuestion);
   };
 
   onSubmitAnswer(selectedAnswer){
     //will call all applicable functions:
+    console.log('clicked');
     this.getCorrectAnswerArrayPosition();
     this.getSubmittedAnswerArrayPosition(selectedAnswer);
     console.log(this.userSubmittedAnswer);
 
     this.adjustScore();
-    // adjustQuizProgress ->
+    this.adjustQuizProgress();
     // serveNextQuestion ->
-    // isFinalQuestionCheck ->
-    console.log('clicked')
+    this.isFinalQuestionCheck();
+    this.setQuestion();
+
   };
 
   getQuizCateogry(){
