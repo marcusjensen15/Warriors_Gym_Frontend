@@ -25,13 +25,13 @@
   <div >
     <div class="quiz-heading-wrapper">
       <p data-test="quizHeader" class="header-text"> Results </p>
-      <p data-test="resultsWrapper" class="header-text">
+      <div data-test="resultsWrapper" class="resultsWrapper">
         Bam! end of quiz! you got {{correctAnswerCounter}} questions correct out of {{quizProgressCounter}} total questions!
-      </p>
+      </div>
     </div>
   </div>
 
-  <button data-test="quizSubmitButton" class="grid-item" mat-raised-button>Back To Muscle Groups</button>
+  <button data-test="quizSubmitButton" routerLink="/musclegroups" class="grid-item" mat-raised-button>Back To Muscle Groups</button>
 
 </div>
 
