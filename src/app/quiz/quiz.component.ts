@@ -50,7 +50,7 @@ export class QuizComponent implements OnInit {
   getSubmittedAnswerArrayPosition(selectedAnswerPosition){
     this.userSubmittedAnswer = parseInt(selectedAnswerPosition.answerSubmission);
     //will collect the answer submitted by the user, and set the userSubmittedAnswer
-  }
+  };
 
   setQuestion() {
     this.currentQuestion = this.quizQuestions[this.quizProgressCounter];
@@ -61,18 +61,16 @@ export class QuizComponent implements OnInit {
     //will count the 'question number' that the user is on
     //adjust 'quizProgressCounter' accordingly
     this.quizProgressCounter++;
-
-  }
+  };
 
   getCorrectAnswerArrayPosition(){
     //Get the correct answer position of the current question via API.
     this.correctAnswerArrayPosition = this.currentQuestion.correctAnswerPosition;
-  }
+  };
 
   adjustScore(){
     //will compare userSubmittedAnswer v correctAnswerArrayPosition, and increment
     //correctAnswerCounter if they are the same
-
     if (this.currentQuestion.correctAnswerPosition === this.userSubmittedAnswer){
       this.correctAnswerCounter++;
     }

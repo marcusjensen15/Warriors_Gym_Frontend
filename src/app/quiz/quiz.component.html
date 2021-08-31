@@ -21,8 +21,16 @@
   </div>
 </div>
 
-<div *ngIf="isFinalQuestion">
-  Bam! end of quiz! you got {{correctAnswerCounter}} questions correct out of {{quizProgressCounter}} total questions!
+<div class="quiz-content-wrapper" *ngIf="isFinalQuestion">
+  <div >
+    <div class="quiz-heading-wrapper">
+      <p data-test="quizHeader" class="header-text"> Results </p>
+      <div data-test="resultsWrapper" class="resultsWrapper">
+        Bam! end of quiz! you got {{correctAnswerCounter}} questions correct out of {{quizProgressCounter}} total questions!
+      </div>
+    </div>
+  </div>
+  <button data-test="quizSubmitButton" routerLink="/musclegroups" class="grid-item" mat-raised-button>Back To Muscle Groups</button>
 </div>
 
 
