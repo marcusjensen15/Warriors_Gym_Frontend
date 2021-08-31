@@ -14,9 +14,14 @@
 - localhost:4200/signup
 - localhost:4200/login
 - localhost:4200/musclegroups
-- localhost:4200/quiz
+- localhost:4200/quiz (this breaks if you navigate directly to it -> must be accessed via /musclegroup view)
 - localhost:4200/users-management
 - localhost:4200/add-question
+- localhost:4200/add-user
+- localhost:4200/individual-user/{userEmail}
+- localhost:4200/individual-user/edit/{userEmail}
+
+
 
 ## Development server
 
