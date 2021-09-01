@@ -10,6 +10,7 @@ import {Router} from '@angular/router'
 })
 export class LoginComponent implements OnInit {
   formGroup: FormGroup;
+  public errorMessage : string;
 
   constructor(
     private authService:AuthServiceService,
@@ -41,6 +42,8 @@ export class LoginComponent implements OnInit {
 
           // Need to display this error text somewhere the user can see it (not in the console). Write to DOM somewhere.
           console.log(error.error);
+          this.errorMessage = error.error;
+          console.log(this.errorMessage);
 
         }
 
