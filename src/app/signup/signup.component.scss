@@ -27,7 +27,7 @@
 }
 
 .example-form{
-  padding-top: 10%;
+  padding-top: 1%;
   width: 20%;
   margin: 0 auto;
   display: flex;
@@ -52,5 +52,11 @@
   &:hover{
     background-color: $scw-yellow-light;
   }
+}
+
+.errorMessage{
+  margin-top: 5%;
+  text-align: center;
+  color: red;
 }
 

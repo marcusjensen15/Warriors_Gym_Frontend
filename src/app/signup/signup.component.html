@@ -1,12 +1,41 @@
 <div class="login-container">
   <div class="example-form-container">
-    <form class="example-form">
+    <form #addUser ="ngForm" (ngSubmit)="onFormSubmit(addUser.value)" class="example-form">
       <div class="form-wrapper">
         <div class="input-wrapper">
+
+          <mat-form-field data-test="signupEmailField" class="login-input">
+            <mat-label>Name</mat-label>
+            <input
+              type="name"
+              matInput
+              required
+              name="nameInput"
+              ngModel
+              placeholder="Bob Smith">
+<!--            <mat-error>-->
+<!--              Please enter a valid email address-->
+<!--            </mat-error>-->
+            <mat-error>
+              Name is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+
+
+
+
+
+
           <mat-form-field data-test="signupEmailField" class="login-input">
             <mat-label>Email Address</mat-label>
-            <input type="email" matInput
-                  placeholder="Ex. pat@example.com">
+            <input
+              type="email"
+              matInput
+              required
+              name="emailInput"
+              ngModel
+              placeholder="Ex. pat@example.com">
             <mat-error>
               Please enter a valid email address
             </mat-error>
@@ -17,7 +46,12 @@
 
           <mat-form-field data-test="signupPasswordField" class="login-input">
             <mat-label>Password</mat-label>
-            <input type="password" matInput>
+            <input
+              type="password"
+              matInput
+              required
+              name="passwordInput"
+              ngModel>
             <mat-error>
               Password is <strong>required</strong>
             </mat-error>
@@ -25,12 +59,18 @@
 
           <mat-form-field data-test="signupPasswordConfirmField" class="login-input">
             <mat-label>Confirm Password</mat-label>
-            <input type="password" matInput>
+            <input
+              type="password"
+              matInput
+              required
+              name="passwordConfirmInput"
+              ngModel>
             <mat-error>
               Password is <strong>required</strong>
             </mat-error>
           </mat-form-field>
-          <button mat-raised-button>Sign Up</button>
+          <button type="submit" value="submit" mat-raised-button>Sign Up</button>
+          <div class="errorMessage" *ngIf="errorMessage">{{errorMessage}}</div>
         </div>
       </div>
     </form>
