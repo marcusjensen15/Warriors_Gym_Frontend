@@ -32,8 +32,9 @@ export class SignupComponent implements OnInit {
       );
     }
 
-   else {
-     this.errorMessage = "Your passwords do not match.";
+    else {
+      this.errorMessage = "Your passwords do not match.";
     }
   }
+  
 }
