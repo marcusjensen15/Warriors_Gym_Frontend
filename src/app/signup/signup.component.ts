@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {GetApiService} from "../get-api.service";
+import {AuthServiceService} from "../auth-service.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-signup',
@@ -10,10 +12,31 @@ export class SignupComponent implements OnInit {
 
   public errorMessage: string;
 
-  constructor(private api: GetApiService) {
+  constructor(
+    private api: GetApiService,
+    private authService:AuthServiceService,
+    private router:Router) {
   }
 
   ngOnInit(): void {
+  }
+
+  loginProcess(data){
+      this.authService.login(data)
+        .subscribe(
+          (result)=>{
+
+            console.log("successful!",result);
+            localStorage.setItem('token', result.token)
+            this.router.navigate(['/musclegroups'])
+          },
+          (error)=>{
+
+            // Need to display this error text somewhere the user can see it (not in the console). Write to DOM somewhere.
+            console.log(error.error);
+          }
+        );
+    // console.log(data);
   }
 
 
@@ -22,6 +45,13 @@ export class SignupComponent implements OnInit {
     if(data.passwordInput === data.passwordConfirmInput){
       this.api.addUser(data).subscribe(res => {
           console.log(res);
+          this.loginProcess(
+            {
+              email: data.emailInput,
+            
+              password: data.passwordInput
+            });
+
         },
 
         (error) => {
@@ -36,5 +66,5 @@ export class SignupComponent implements OnInit {
       this.errorMessage = "Your passwords do not match.";
     }
   }
-  
+
 }
