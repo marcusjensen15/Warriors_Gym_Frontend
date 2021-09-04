@@ -16,6 +16,11 @@ export class AuthServiceService {
     return this.http.post(`http://localhost:3000/auth`, data);
   }
 
+  logout(){
+    //should remove token from localStorage
+    localStorage.removeItem('token');
+  }
+
   // Double ! will always return true or false.
 
   loggedIn(){
