@@ -36,7 +36,6 @@ export class SignupComponent implements OnInit {
             console.log(error.error);
           }
         );
-    // console.log(data);
   }
 
 
@@ -48,7 +47,7 @@ export class SignupComponent implements OnInit {
           this.loginProcess(
             {
               email: data.emailInput,
-            
+
               password: data.passwordInput
             });
 
@@ -66,5 +65,4 @@ export class SignupComponent implements OnInit {
       this.errorMessage = "Your passwords do not match.";
     }
   }
-
 }
