@@ -17,3 +17,14 @@ img {
   height: 50px;
   float: right;
 }
+
+.buttonContainer{
+  margin-left: 2%;
+}
+
+.logoutButton {
+  background-color: $scw-yellow-dark;
+  &:hover{
+    background-color: $scw-yellow-light;
+  }
+}
