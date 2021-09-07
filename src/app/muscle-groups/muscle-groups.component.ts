@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthServiceService } from '../auth-service.service';
 
 @Component({
   selector: 'app-muscle-groups',
@@ -11,9 +12,19 @@ export class MuscleGroupsComponent implements OnInit {
 
   public muscleGroups = ["Tournaments", "Assessments", "Training", "Resources", "Courses", "Administration", "Content", "Metrics"];
 
-  constructor() { }
+  constructor(
+    private authService:AuthServiceService
+  ) { }
 
-  ngOnInit(): void {
+  async handleUserTokenCheck(){
+    const token = await this.authService.getToken();
+    console.log(token);
+    await this.authService.userTokenVerification().subscribe(data => console.log(data));
+
+  }
+
+  async ngOnInit() {
+      await this.handleUserTokenCheck();
   }
 
 }
