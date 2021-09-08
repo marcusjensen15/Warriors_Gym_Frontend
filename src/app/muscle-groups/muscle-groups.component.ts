@@ -11,7 +11,7 @@ export class MuscleGroupsComponent implements OnInit {
   //If you want to add a new muscle group, add it to the array below.
 
   public muscleGroups = ["Tournaments", "Assessments", "Training", "Resources", "Courses", "Administration", "Content", "Metrics"];
-  public muscleGroupAccess: boolean;
+  public muscleGroupAccess = true;
 
   constructor(
     private authService:AuthServiceService
@@ -26,7 +26,7 @@ export class MuscleGroupsComponent implements OnInit {
     }
 
     console.log(this.muscleGroupAccess);
-    await this.authService.userTokenVerification('meat')
+    await this.authService.userTokenVerification(token)
       .subscribe(data => console.log(data),
         (error)=>{
         console.log(error.error);
