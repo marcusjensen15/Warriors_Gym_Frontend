@@ -34,10 +34,9 @@ export class AuthServiceService {
     return localStorage.getItem('token')
   }
 
-  userTokenVerification(){
+  userTokenVerification(token){
     const url = `http://localhost:3000/auth/usertokenverification`;
-    let token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTM3OGFmYjZiYTJlMTAzN2Y1MTI5YjMiLCJpYXQiOjE2MzEwMzAwMTF9.R_DsE936PHo8U6Pno6rd_M0LKnvUYPm7t6Oub5iMmm4"
-    return this.http.post(url, {
+    return this.http.post(url, null,{
       headers: {
         "x-auth-token": token
       }
