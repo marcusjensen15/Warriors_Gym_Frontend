@@ -16,6 +16,8 @@ export class AuthServiceService {
     return this.http.post(`http://localhost:3000/auth`, data);
   }
 
+  //Logs user out of app
+
   logout(){
     //should remove token from localStorage
     localStorage.removeItem('token');
@@ -27,7 +29,30 @@ export class AuthServiceService {
     return !!localStorage.getItem('token');
   }
 
+  //Gets the user's token from localStorage
   getToken(){
     return localStorage.getItem('token')
   }
+
+  userTokenVerification(token){
+    const url = `http://localhost:3000/auth/usertokenverification`;
+    return this.http.post(url, null,{
+      headers: {
+        "x-auth-token": token
+      }
+    })
+  }
+
+    adminTokenVerification(token){
+    const url = `http://localhost:3000/auth/admintokenverification`;
+    return this.http.post(url, null,{
+      headers: {
+        "x-auth-token": token
+      }
+    })
+  }
+
+
+
+
 }

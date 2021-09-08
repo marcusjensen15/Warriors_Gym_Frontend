@@ -1,6 +1,6 @@
-<app-header></app-header>
+<app-header *ngIf="muscleGroupAccess"></app-header>
 
-<div class="muscle-group-content-wrapper">
+<div *ngIf="muscleGroupAccess" class="muscle-group-content-wrapper">
   <div class="muscle-group-heading-wrapper">
     <p data-test="muscleGroupsHeader" class="header-text">Select A Muscle Group Warrior</p>
   </div>
@@ -14,7 +14,8 @@
       {{muscleGroup}}
     </button>
   </div>
-
 </div>
 
-
+<div *ngIf="muscleGroupAccess == false">
+  You must be logged in to view this page
+</div>
