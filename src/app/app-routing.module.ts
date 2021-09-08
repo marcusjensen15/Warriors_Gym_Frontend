@@ -12,6 +12,7 @@ import { IndividualUserComponent } from "./individual-user/individual-user.compo
 import { AddUserComponent} from "./add-user/add-user.component";
 import { AuthGuard } from './auth.guard';
 import { EditUserComponent } from "./edit-user/edit-user.component";
+import { NotLoggedInMessageComponent } from "./not-logged-in-message/not-logged-in-message.component";
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent},
@@ -23,7 +24,8 @@ const routes: Routes = [
   { path: 'add-question', component: AddQuestionComponent },
   { path: 'individual-user/:name', component: IndividualUserComponent},
   { path: 'individual-user/edit/:name', component: EditUserComponent},
-  { path: 'add-user', component: AddUserComponent}
+  { path: 'add-user', component: AddUserComponent},
+  { path: 'loginmsg', component: NotLoggedInMessageComponent}
 ];
 
 @NgModule({
