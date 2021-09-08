@@ -25,13 +25,11 @@ export class MuscleGroupsComponent implements OnInit {
       this.muscleGroupAccess = false
     }
 
-    console.log(this.muscleGroupAccess);
     await this.authService.userTokenVerification(token)
       .subscribe(data => console.log(data),
         (error)=>{
         console.log(error.error);
         this.muscleGroupAccess = false;
-        console.log(this.muscleGroupAccess);
         });
 
   }

@@ -43,4 +43,16 @@ export class AuthServiceService {
     })
   }
 
+    adminTokenVerification(token){
+    const url = `http://localhost:3000/auth/admintokenverification`;
+    return this.http.post(url, null,{
+      headers: {
+        "x-auth-token": token
+      }
+    })
+  }
+
+
+
+
 }
