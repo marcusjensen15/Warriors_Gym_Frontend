@@ -28,6 +28,7 @@ import { IndividualUserComponent } from './individual-user/individual-user.compo
 import { AddUserComponent } from './add-user/add-user.component';
 import {MatCheckbox, MatCheckboxModule} from "@angular/material/checkbox";
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { NotLoggedInMessageComponent } from './not-logged-in-message/not-logged-in-message.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     AddQuestionComponent,
     IndividualUserComponent,
     AddUserComponent,
-    EditUserComponent
+    EditUserComponent,
+    NotLoggedInMessageComponent
   ],
   imports: [
     BrowserModule,

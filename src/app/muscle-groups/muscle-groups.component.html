@@ -16,6 +16,4 @@
   </div>
 </div>
 
-<div *ngIf="muscleGroupAccess == false">
-  You must be logged in to view this page
-</div>
+<app-not-logged-in-message *ngIf="muscleGroupAccess == false"></app-not-logged-in-message>

@@ -1,0 +1,27 @@
+@import "../../assets/variables";
+
+.notLoggedInContainer{
+  background-color: $scw-grey;
+  height: 100%;
+  width: 100%;
+}
+
+
+.notLoggedInDisplayTxt {
+  color: $scw-white;
+  text-align: center;
+  padding-top: 10%;
+  font-size: 1.5vw;
+}
+
+.loginButton{
+  background-color: $scw-yellow-dark;
+  color: $scw-white;
+  width: 10%;
+  margin-left: 45%;
+  margin-right: 45%;
+  margin-top: 5%;
+  &:hover{
+    background-color: $scw-yellow-light;
+  }
+}
