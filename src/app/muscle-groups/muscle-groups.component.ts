@@ -17,6 +17,9 @@ export class MuscleGroupsComponent implements OnInit {
     private authService:AuthServiceService
   ) { }
 
+
+  //This can be a service and imported where needed.
+
   async handleUserTokenCheck(){
 
     const token = await this.authService.getToken();

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GetApiService} from "../get-api.service";
 import {ActivatedRoute} from "@angular/router";
+import {AuthServiceService} from "../auth-service.service";
 
 @Component({
   selector: 'app-quiz',
@@ -34,7 +35,13 @@ export class QuizComponent implements OnInit {
   //false if there are additional questions, true if not. Render message instead of new quiz question
   public isFinalQuestion = false;
 
-  constructor(private activatedRoute: ActivatedRoute, private api:GetApiService) { }
+  //is user logged in variable
+
+  public quizAccess = true;
+
+  constructor(private activatedRoute: ActivatedRoute,
+              private api:GetApiService,
+              private authService:AuthServiceService) { }
 
   getQuestionsByCategoryHandler(questionCategory) {
    return this.api.getQuestionsByCategory(questionCategory).subscribe(
@@ -45,6 +52,26 @@ export class QuizComponent implements OnInit {
         this.setQuestion();
       }
     );
+  }
+
+  //Below needs to be refactored and made to be imported where needed:
+
+  async handleUserTokenCheck(){
+
+    const token = await this.authService.getToken();
+
+    if(!token){
+      this.quizAccess = false
+    }
+
+    await this.authService.userTokenVerification(token)
+      .subscribe(data => console.log(data),
+        (error)=>{
+          console.log(error.error);
+          this.quizAccess = false;
+          console.log(this.quizAccess);
+        });
+
   }
 
   getSubmittedAnswerArrayPosition(selectedAnswerPosition){
@@ -103,6 +130,7 @@ export class QuizComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.handleUserTokenCheck();
     this.getQuizCateogry();
     this.getQuestionsByCategoryHandler(this.quizCategory);
   }
