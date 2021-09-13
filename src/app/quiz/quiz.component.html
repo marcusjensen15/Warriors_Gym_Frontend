@@ -1,5 +1,5 @@
-<app-header></app-header>
-<div class="quiz-content-wrapper" *ngIf="!isFinalQuestion">
+<app-header *ngIf="quizAccess"></app-header>
+<div class="quiz-content-wrapper" *ngIf="!isFinalQuestion && quizAccess">
   <div class="quiz-heading-wrapper">
     <p data-test="quizHeader" class="header-text">{{quizCategory}}</p>
   </div>
@@ -32,5 +32,8 @@
   </div>
   <button data-test="quizSubmitButton" routerLink="/musclegroups" class="grid-item" mat-raised-button>Back To Muscle Groups</button>
 </div>
+
+<app-not-logged-in-message *ngIf="quizAccess == false"></app-not-logged-in-message>
+
 
 
